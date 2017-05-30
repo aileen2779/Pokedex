@@ -27,7 +27,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <searchBar contentMode="redraw" searchBarStyle="minimal" placeholder="Search Pokemon" translatesAutoresizingMaskIntoConstraints="NO" id="Kg2-FC-9f0">
+                            <searchBar contentMode="redraw" searchBarStyle="minimal" placeholder="Search Shifter" translatesAutoresizingMaskIntoConstraints="NO" id="Kg2-FC-9f0">
                                 <rect key="frame" x="0.0" y="65" width="375" height="44"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="44" id="Qwd-pd-row"/>
@@ -37,6 +37,37 @@
                             <imageView userInteractionEnabled="NO" alpha="0.29999999999999999" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Depositphotos_1265275_original" translatesAutoresizingMaskIntoConstraints="NO" id="aFm-NQ-7zw" userLabel="bg">
                                 <rect key="frame" x="0.0" y="109" width="375" height="558"/>
                             </imageView>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="yQ1-lj-1YP">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="65"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="nfl-ST-pcn">
+                                        <rect key="frame" x="341" y="31" width="26" height="26"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="26" id="QVH-fS-ndE"/>
+                                            <constraint firstAttribute="width" constant="26" id="uww-cA-6wO"/>
+                                        </constraints>
+                                        <state key="normal" image="music.png"/>
+                                        <connections>
+                                            <action selector="musicBtnPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="9z6-HW-CSu"/>
+                                        </connections>
+                                    </button>
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="702ShifersLogoTransparent" translatesAutoresizingMaskIntoConstraints="NO" id="5YW-iw-Ouk">
+                                        <rect key="frame" x="101" y="15" width="173" height="38"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="38" id="fAJ-vM-DpT"/>
+                                            <constraint firstAttribute="width" constant="173" id="zKa-hg-0Az"/>
+                                        </constraints>
+                                    </imageView>
+                                </subviews>
+                                <color key="backgroundColor" red="0.55686274509803924" green="0.0" blue="0.12941176470588234" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstItem="5YW-iw-Ouk" firstAttribute="centerX" secondItem="yQ1-lj-1YP" secondAttribute="centerX" id="3OY-sd-nm0"/>
+                                    <constraint firstAttribute="height" constant="65" id="3Zn-Rg-igb"/>
+                                    <constraint firstAttribute="bottom" secondItem="nfl-ST-pcn" secondAttribute="bottom" constant="8" id="Hoj-DT-u0i"/>
+                                    <constraint firstItem="5YW-iw-Ouk" firstAttribute="top" secondItem="yQ1-lj-1YP" secondAttribute="top" constant="15" id="HuR-Zy-xTp"/>
+                                    <constraint firstAttribute="trailing" secondItem="nfl-ST-pcn" secondAttribute="trailing" constant="8" id="uzh-Bd-FId"/>
+                                </constraints>
+                            </view>
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="ROp-0H-xLa" userLabel="CellCollection">
                                 <rect key="frame" x="10" y="105" width="355" height="562"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
@@ -88,40 +119,6 @@
                                     </collectionViewCell>
                                 </cells>
                             </collectionView>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="yQ1-lj-1YP">
-                                <rect key="frame" x="0.0" y="0.0" width="375" height="65"/>
-                                <subviews>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="702Shifters" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Lpe-oG-1TD">
-                                        <rect key="frame" x="120.5" y="27" width="134" height="30"/>
-                                        <constraints>
-                                            <constraint firstAttribute="width" constant="134" id="jCc-wU-JSr"/>
-                                            <constraint firstAttribute="height" constant="30" id="qRw-9K-FH2"/>
-                                        </constraints>
-                                        <fontDescription key="fontDescription" type="system" pointSize="25"/>
-                                        <color key="textColor" red="0.99195677042007446" green="0.99622899293899536" blue="0.99192315340042114" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                        <nil key="highlightedColor"/>
-                                    </label>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="nfl-ST-pcn">
-                                        <rect key="frame" x="341" y="31" width="26" height="26"/>
-                                        <constraints>
-                                            <constraint firstAttribute="height" constant="26" id="QVH-fS-ndE"/>
-                                            <constraint firstAttribute="width" constant="26" id="uww-cA-6wO"/>
-                                        </constraints>
-                                        <state key="normal" image="music.png"/>
-                                        <connections>
-                                            <action selector="musicBtnPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="9z6-HW-CSu"/>
-                                        </connections>
-                                    </button>
-                                </subviews>
-                                <color key="backgroundColor" red="0.55686274509803924" green="0.0" blue="0.12941176470588234" alpha="1" colorSpace="calibratedRGB"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="65" id="3Zn-Rg-igb"/>
-                                    <constraint firstAttribute="bottom" secondItem="Lpe-oG-1TD" secondAttribute="bottom" constant="8" id="7yG-lZ-kt3"/>
-                                    <constraint firstAttribute="bottom" secondItem="nfl-ST-pcn" secondAttribute="bottom" constant="8" id="Hoj-DT-u0i"/>
-                                    <constraint firstItem="Lpe-oG-1TD" firstAttribute="centerX" secondItem="yQ1-lj-1YP" secondAttribute="centerX" id="dxc-4b-fBl"/>
-                                    <constraint firstAttribute="trailing" secondItem="nfl-ST-pcn" secondAttribute="trailing" constant="8" id="uzh-Bd-FId"/>
-                                </constraints>
-                            </view>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
@@ -149,7 +146,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="90.400000000000006" y="122.78860569715144"/>
+            <point key="canvasLocation" x="101.59999999999999" y="142.57871064467767"/>
         </scene>
         <!--Pokemon DetailVC-->
         <scene sceneID="ucW-qL-O3l">
@@ -451,6 +448,7 @@
     </scenes>
     <resources>
         <image name="4" width="120" height="120"/>
+        <image name="702ShifersLogoTransparent" width="250" height="70"/>
         <image name="Depositphotos_1265275_original" width="4014" height="2676"/>
         <image name="back" width="100" height="67"/>
         <image name="music.png" width="100" height="100"/>

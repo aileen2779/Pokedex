@@ -180,14 +180,18 @@ class ViewController: UIViewController, UICollectionViewDelegate, UICollectionVi
         } else {
             
             inSearchMode = true
-            
             let lower = searchBar.text!.lowercased()
-            
             filteredPokemon = pokemon.filter({$0.name.range(of: lower) != nil})
             collection.reloadData()
             
+
         }
         
+    }
+
+    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
+        view.endEditing(true)
+        super.touchesBegan(touches, with: event)
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
