@@ -14,6 +14,7 @@ class ViewController: UIViewController, UICollectionViewDelegate, UICollectionVi
     @IBOutlet weak var collection: UICollectionView!
     @IBOutlet weak var searchBar: UISearchBar!
     
+    var shifter: Shifter!
     
     var pokemon = [Pokemon]()
     var filteredPokemon = [Pokemon]()
@@ -30,7 +31,9 @@ class ViewController: UIViewController, UICollectionViewDelegate, UICollectionVi
         searchBar.returnKeyType = UIReturnKeyType.done
         
         parsePokemonCSV()
-        //initAudio()
+    
+        
+        initAudio()
         
     }
     
@@ -74,7 +77,10 @@ class ViewController: UIViewController, UICollectionViewDelegate, UICollectionVi
             
             print(err.debugDescription)
         }
+        
     }
+
+
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         

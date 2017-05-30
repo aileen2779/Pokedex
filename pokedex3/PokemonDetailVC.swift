@@ -38,7 +38,9 @@ class PokemonDetailVC: UIViewController {
         mainImg.image = img
         currentEvoImg.image = img
         pokedexLbl.text = "\(pokemon.pokedexId)"
-        pokemon.downloadPokemonDetail { 
+        
+        
+        pokemon.downloadPokemonDetail {
             
             // Whatever we write will only be called after the network call is compelte!
             self.updateUI()
