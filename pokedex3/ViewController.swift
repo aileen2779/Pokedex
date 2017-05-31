@@ -56,6 +56,7 @@ class ViewController: UIViewController, UICollectionViewDelegate, UICollectionVi
                             self.pokemon.append(poke)
                             x += 1
                         } while ( x < myJson.count)
+                        self.pokemon.sort(by: {$0.name < $1.name})
                         self.collection.reloadData()
                     } catch {
                         print("done")
