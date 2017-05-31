@@ -2,12 +2,11 @@
 //  ViewController.swift
 //  pokedex3
 //
-//  Created by Jonny B on 7/22/16.
-//  Copyright © 2016 Jonny B. All rights reserved.
 //
 
 import UIKit
 import AVFoundation
+import Alamofire
 
 class ViewController: UIViewController, UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout, UISearchBarDelegate {
     
@@ -21,6 +20,8 @@ class ViewController: UIViewController, UICollectionViewDelegate, UICollectionVi
     var musicPlayer: AVAudioPlayer!
     var inSearchMode = false
     
+    var searchURL = "http://www.702shifters.com/json_allusers.php"
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -30,11 +31,43 @@ class ViewController: UIViewController, UICollectionViewDelegate, UICollectionVi
         
         searchBar.returnKeyType = UIReturnKeyType.done
         
-        parsePokemonCSV()
+        //parsePokemonCSV()
     
         
-        initAudio()
+        //initAudio()
         
+        callJSONURL(jsonUrl: searchURL)
+        //collection.reloadData()
+    }
+
+    func callJSONURL(jsonUrl: String) {
+        let url = URL(string: "http://www.702shifters.com/json_service.php")        
+        let task = URLSession.shared.dataTask(with: url!) { (data, response, error) in
+            if error != nil {
+                print ("ERROR")
+            } else  {
+                if let content = data {
+                    do {
+                        let myJson = try JSONSerialization.jsonObject(with: content, options: JSONSerialization.ReadingOptions.mutableContainers) as! [AnyObject]
+                        
+                        var x = 0
+                        repeat {
+                            var dict2  = myJson[x] as! [String : String]
+                            
+                                let pokeId = Int(dict2["user_id"]!)!
+                                let name = "\(dict2["first_name"]!.lowercased()) \(dict2["last_name"]!.lowercased())"
+                                let poke = Pokemon(name: name, pokedexId: pokeId)
+                                self.pokemon.append(poke)
+                            x += 1
+                        } while ( x < myJson.count)
+                        self.collection.reloadData()
+                    } catch {
+                        print("done")
+                    }
+                }
+            }
+        }
+        task.resume()
     }
     
     func initAudio() {
@@ -53,35 +86,7 @@ class ViewController: UIViewController, UICollectionViewDelegate, UICollectionVi
             print(err.debugDescription)
         }
     }
-    
-    func parsePokemonCSV() {
-        
-        let path = Bundle.main.path(forResource: "pokemon", ofType: "csv")!
-        
-        do {
-            
-            let csv = try CSV(contentsOfURL: path)
-            let rows = csv.rows
-            
-            for row in rows {
-                
-                let pokeId = Int(row["id"]!)!
-                let name = row["identifier"]!
-                
-                let poke = Pokemon(name: name, pokedexId: pokeId)
-                pokemon.append(poke)
-                
-            }
-            
-        } catch let err as NSError {
-            
-            print(err.debugDescription)
-        }
-        
-    }
 
-
-    
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         
         if let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "PokeCell", for: indexPath) as? PokeCell {
@@ -114,11 +119,8 @@ class ViewController: UIViewController, UICollectionViewDelegate, UICollectionVi
         var poke: Pokemon!
         
         if inSearchMode {
-            
             poke = filteredPokemon[indexPath.row]
-            
         } else {
-            
             poke = pokemon[indexPath.row]
         }
         
@@ -183,8 +185,6 @@ class ViewController: UIViewController, UICollectionViewDelegate, UICollectionVi
             let lower = searchBar.text!.lowercased()
             filteredPokemon = pokemon.filter({$0.name.range(of: lower) != nil})
             collection.reloadData()
-            
-
         }
         
     }

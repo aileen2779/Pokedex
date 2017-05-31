@@ -32,28 +32,4 @@ class Shifter {
     }
     
     
-    func downloadShifterDetail(completed: @escaping DownloadComplete) {
-        Alamofire.request("http://www.702shifters.com/json_allusers.php").responseJSON { (response) in
-            
-            if let dict = response.result.value as? Dictionary<String, AnyObject> {
-                
-                if let id = dict["id"] as? String {
-                    self._id = id
-                }
-                
-                if let userLogin = dict["user_login"] as? String {
-                    self._userLogin = userLogin
-                }
-                
-                
-                print(self._id)
-                print(self._userLogin)
-                
-                
-            }
-            
-            completed()
-        }
-    }
-    
 }

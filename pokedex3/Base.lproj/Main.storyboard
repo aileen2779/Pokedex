@@ -164,12 +164,12 @@
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="65"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Ivysaur" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9bB-5D-vYO">
-                                        <rect key="frame" x="87.5" y="36" width="200" height="21"/>
+                                        <rect key="frame" x="37.5" y="36" width="300" height="21"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="21" id="69u-Jy-t0i"/>
-                                            <constraint firstAttribute="width" constant="200" id="GTe-CZ-QJT"/>
+                                            <constraint firstAttribute="width" constant="300" id="GTe-CZ-QJT"/>
                                         </constraints>
-                                        <fontDescription key="fontDescription" name=".SFUIText" family=".SF UI Text" pointSize="24"/>
+                                        <fontDescription key="fontDescription" name=".SFUIText" family=".SF UI Text" pointSize="22"/>
                                         <color key="textColor" red="0.9959825873374939" green="0.99621325731277466" blue="0.99187678098678589" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <nil key="highlightedColor"/>
                                     </label>
