@@ -27,7 +27,7 @@
 		7EB1F5E81EDDEA3400046D40 /* Shifter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Shifter.swift; sourceTree = "<group>"; };
 		850121C370D34FAEA05601A9 /* Pods-pokedex3.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-pokedex3.debug.xcconfig"; path = "Pods/Target Support Files/Pods-pokedex3/Pods-pokedex3.debug.xcconfig"; sourceTree = "<group>"; };
 		DAECE24C54B75D9A033B22B0 /* Pods-pokedex3.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-pokedex3.release.xcconfig"; path = "Pods/Target Support Files/Pods-pokedex3/Pods-pokedex3.release.xcconfig"; sourceTree = "<group>"; };
-		F9439F101D4331BE00B4B214 /* pokedex3.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = pokedex3.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		F9439F101D4331BE00B4B214 /* 702Shifters.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = 702Shifters.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F9439F131D4331BE00B4B214 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		F9439F151D4331BE00B4B214 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		F9439F181D4331BE00B4B214 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -74,7 +74,7 @@
 		F9439F071D4331BE00B4B214 = {
 			isa = PBXGroup;
 			children = (
-				F9439F121D4331BE00B4B214 /* pokedex3 */,
+				F9439F121D4331BE00B4B214 /* 702Shifters */,
 				F9439F1F1D4331BE00B4B214 /* Info.plist */,
 				F9439F111D4331BE00B4B214 /* Products */,
 				34F08DC4FD3F5D093CF49C05 /* Pods */,
@@ -85,12 +85,12 @@
 		F9439F111D4331BE00B4B214 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				F9439F101D4331BE00B4B214 /* pokedex3.app */,
+				F9439F101D4331BE00B4B214 /* 702Shifters.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
 		};
-		F9439F121D4331BE00B4B214 /* pokedex3 */ = {
+		F9439F121D4331BE00B4B214 /* 702Shifters */ = {
 			isa = PBXGroup;
 			children = (
 				F9A0270D1D43520900107657 /* Model */,
@@ -103,6 +103,7 @@
 				F9439F1A1D4331BE00B4B214 /* Assets.xcassets */,
 				F9439F1C1D4331BE00B4B214 /* LaunchScreen.storyboard */,
 			);
+			name = 702Shifters;
 			path = pokedex3;
 			sourceTree = "<group>";
 		};
@@ -153,9 +154,9 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		F9439F0F1D4331BE00B4B214 /* pokedex3 */ = {
+		F9439F0F1D4331BE00B4B214 /* 702Shifters */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = F9439F221D4331BE00B4B214 /* Build configuration list for PBXNativeTarget "pokedex3" */;
+			buildConfigurationList = F9439F221D4331BE00B4B214 /* Build configuration list for PBXNativeTarget "702Shifters" */;
 			buildPhases = (
 				5961E6D218DD1D885C357E41 /* [CP] Check Pods Manifest.lock */,
 				F9439F0C1D4331BE00B4B214 /* Sources */,
@@ -168,9 +169,9 @@
 			);
 			dependencies = (
 			);
-			name = pokedex3;
+			name = 702Shifters;
 			productName = pokedex3;
-			productReference = F9439F101D4331BE00B4B214 /* pokedex3.app */;
+			productReference = F9439F101D4331BE00B4B214 /* 702Shifters.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
@@ -192,7 +193,7 @@
 					};
 				};
 			};
-			buildConfigurationList = F9439F0B1D4331BE00B4B214 /* Build configuration list for PBXProject "pokedex3" */;
+			buildConfigurationList = F9439F0B1D4331BE00B4B214 /* Build configuration list for PBXProject "702Shifters" */;
 			compatibilityVersion = "Xcode 3.2";
 			developmentRegion = English;
 			hasScannedForEncodings = 0;
@@ -205,7 +206,7 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				F9439F0F1D4331BE00B4B214 /* pokedex3 */,
+				F9439F0F1D4331BE00B4B214 /* 702Shifters */,
 			);
 		};
 /* End PBXProject section */
@@ -410,7 +411,7 @@
 				DEVELOPMENT_TEAM = U47Q3369SJ;
 				INFOPLIST_FILE = pokedex3/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.gamymalaarte.pokedex3;
+				PRODUCT_BUNDLE_IDENTIFIER = com.gamymalaarte.702shiftersAdmin;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 3.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -426,7 +427,7 @@
 				DEVELOPMENT_TEAM = U47Q3369SJ;
 				INFOPLIST_FILE = pokedex3/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.gamymalaarte.pokedex3;
+				PRODUCT_BUNDLE_IDENTIFIER = com.gamymalaarte.702shiftersAdmin;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 3.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -436,7 +437,7 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		F9439F0B1D4331BE00B4B214 /* Build configuration list for PBXProject "pokedex3" */ = {
+		F9439F0B1D4331BE00B4B214 /* Build configuration list for PBXProject "702Shifters" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				F9439F201D4331BE00B4B214 /* Debug */,
@@ -445,7 +446,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		F9439F221D4331BE00B4B214 /* Build configuration list for PBXNativeTarget "pokedex3" */ = {
+		F9439F221D4331BE00B4B214 /* Build configuration list for PBXNativeTarget "702Shifters" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				F9439F231D4331BE00B4B214 /* Debug */,

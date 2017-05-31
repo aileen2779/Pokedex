@@ -13,14 +13,12 @@ class ViewController: UIViewController, UICollectionViewDelegate, UICollectionVi
     @IBOutlet weak var collection: UICollectionView!
     @IBOutlet weak var searchBar: UISearchBar!
     
-    var shifter: Shifter!
-    
-    var pokemon = [Pokemon]()
+    var shifter = [Pokemon]()
     var filteredPokemon = [Pokemon]()
     var musicPlayer: AVAudioPlayer!
     var inSearchMode = false
     
-    var searchURL = URL(string: "http://www.702shifters.com/json_service.php")
+    var searchURL = URL_BASE
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -62,7 +60,7 @@ class ViewController: UIViewController, UICollectionViewDelegate, UICollectionVi
                             let emergencyNum = String(dict2["emer_contact_number"]!)!
                             let phone1 = String(dict2["phone1"]!)!
                             let name = "\(dict2["first_name"]!.lowercased()) \(dict2["last_name"]!.lowercased())"
-                            let poke = Pokemon(name: name,
+                            let shifter = Pokemon(name: name,
                                                 pokedexId: pokeId,
                                                 userName: userName,
                                                 address1: address1,
@@ -74,10 +72,10 @@ class ViewController: UIViewController, UICollectionViewDelegate, UICollectionVi
                                                 emergencyNum: emergencyNum,
                                                 phone1: phone1
                             )
-                            self.pokemon.append(poke)
+                            self.shifter.append(shifter)
                             x += 1
                         } while ( x < myJson.count)
-                        self.pokemon.sort(by: {$0.name < $1.name})
+                        self.shifter.sort(by: {$0.name < $1.name})
                         self.collection.reloadData()
                     } catch {
                         print("done")
@@ -93,17 +91,17 @@ class ViewController: UIViewController, UICollectionViewDelegate, UICollectionVi
         
         if let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "PokeCell", for: indexPath) as? PokeCell {
             
-            let poke: Pokemon!
+            let shiftClassVar: Pokemon!
             
             if inSearchMode {
                 
-                poke = filteredPokemon[indexPath.row]
-                cell.configureCell(poke)
+                shiftClassVar = filteredPokemon[indexPath.row]
+                cell.configureCell(shiftClassVar)
                 
             } else {
                 
-                poke = pokemon[indexPath.row]
-                cell.configureCell(poke)
+                shiftClassVar = shifter[indexPath.row]
+                cell.configureCell(shiftClassVar)
             
             }
             
@@ -118,15 +116,15 @@ class ViewController: UIViewController, UICollectionViewDelegate, UICollectionVi
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         
-        var poke: Pokemon!
+        var shiftClassVar: Pokemon!
         
         if inSearchMode {
-            poke = filteredPokemon[indexPath.row]
+            shiftClassVar = filteredPokemon[indexPath.row]
         } else {
-            poke = pokemon[indexPath.row]
+            shiftClassVar = shifter[indexPath.row]
         }
         
-        performSegue(withIdentifier: "PokemonDetailVC", sender: poke)
+        performSegue(withIdentifier: "PokemonDetailVC", sender: shiftClassVar)
         
         
     }
@@ -136,7 +134,7 @@ class ViewController: UIViewController, UICollectionViewDelegate, UICollectionVi
         if inSearchMode {
             return filteredPokemon.count
         }
-        return pokemon.count
+        return shifter.count
     }
     
     func numberOfSections(in collectionView: UICollectionView) -> Int {
@@ -168,7 +166,7 @@ class ViewController: UIViewController, UICollectionViewDelegate, UICollectionVi
             
             inSearchMode = true
             let lower = searchBar.text!.lowercased()
-            filteredPokemon = pokemon.filter({$0.name.range(of: lower) != nil})
+            filteredPokemon = shifter.filter({$0.name.range(of: lower) != nil})
             collection.reloadData()
         }
         
@@ -182,8 +180,8 @@ class ViewController: UIViewController, UICollectionViewDelegate, UICollectionVi
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "PokemonDetailVC" {
             if let detailsVC = segue.destination as? PokemonDetailVC {
-                if let poke = sender as? Pokemon {
-                    detailsVC.pokemon = poke
+                if let shiftClassVar = sender as? Pokemon {
+                    detailsVC.pokemon = shiftClassVar
                 }
             }
         }

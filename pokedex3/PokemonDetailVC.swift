@@ -46,7 +46,6 @@ class PokemonDetailVC: UIViewController {
     
     func updateUI() {
       
-        //descriptionLbl.text = pokemon.description
         userIdText.text = pokemon.userName
         phoneText.text = pokemon.phone1
         address1Text.text = pokemon.address1
@@ -59,7 +58,6 @@ class PokemonDetailVC: UIViewController {
     }
     
     @IBAction func backBtnPressed(_ sender: UIButton) {
-        
         dismiss(animated: true, completion: nil)
     }
     
