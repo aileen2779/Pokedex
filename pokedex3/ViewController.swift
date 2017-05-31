@@ -47,12 +47,33 @@ class ViewController: UIViewController, UICollectionViewDelegate, UICollectionVi
                         let myJson = try JSONSerialization.jsonObject(with: content, options: JSONSerialization.ReadingOptions.mutableContainers) as! [AnyObject]
                         
                         var x = 0
+                        //print(myJson)
                         repeat {
                             var dict2  = myJson[x] as! [String : String]
                             
-                            let pokeId = Int(dict2["user_id"]!)!
+                            let pokeId      = Int(dict2["user_id"]!)!
+                            let userName    = String(dict2["user_name"]!)!
+                            let address1    = String(dict2["addr1"]!)!
+                            let city        = String(dict2["city"]!)!
+                            let state       = String(dict2["state"]!)!
+                            let zip         = String(dict2["zip"]!)!
+                            let country     = String(dict2["country"]!)!
+                            let emergencyName = String(dict2["emer_contact_name"]!)!
+                            let emergencyNum = String(dict2["emer_contact_number"]!)!
+                            let phone1 = String(dict2["phone1"]!)!
                             let name = "\(dict2["first_name"]!.lowercased()) \(dict2["last_name"]!.lowercased())"
-                            let poke = Pokemon(name: name, pokedexId: pokeId)
+                            let poke = Pokemon(name: name,
+                                                pokedexId: pokeId,
+                                                userName: userName,
+                                                address1: address1,
+                                                city: city,
+                                                state: state,
+                                                zip: zip,
+                                                country: country,
+                                                emergencyName: emergencyName,
+                                                emergencyNum: emergencyNum,
+                                                phone1: phone1
+                            )
                             self.pokemon.append(poke)
                             x += 1
                         } while ( x < myJson.count)
@@ -113,15 +134,12 @@ class ViewController: UIViewController, UICollectionViewDelegate, UICollectionVi
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         
         if inSearchMode {
-            
             return filteredPokemon.count
         }
-        
         return pokemon.count
     }
     
     func numberOfSections(in collectionView: UICollectionView) -> Int {
-        
         return 1
     }
     
@@ -132,21 +150,7 @@ class ViewController: UIViewController, UICollectionViewDelegate, UICollectionVi
         
     }
     
-    @IBAction func musicBtnPressed(_ sender: UIButton) {
-        
-        if musicPlayer.isPlaying {
-            
-            musicPlayer.pause()
-            sender.alpha = 0.2
-            
-        } else {
-            
-            musicPlayer.play()
-            sender.alpha = 1.0
-        }
-        
-    }
-    
+   
     func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
         
         view.endEditing(true)
