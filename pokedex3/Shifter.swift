@@ -13,10 +13,10 @@ import Alamofire
 class Shifter {
     
     private var _userLogin: String!
-    private var _id: String!
+    private var _id: Int!
     
    
-    var id: String {
+    var id: Int {
         return _id
     }
     
@@ -24,7 +24,7 @@ class Shifter {
         return _userLogin
     }
     
-    init(id: String, userLogin: String) {
+    init(id: Int, userLogin: String) {
         
         self._id = id
         self._userLogin = userLogin

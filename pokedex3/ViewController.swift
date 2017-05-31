@@ -20,7 +20,7 @@ class ViewController: UIViewController, UICollectionViewDelegate, UICollectionVi
     var musicPlayer: AVAudioPlayer!
     var inSearchMode = false
     
-    var searchURL = "http://www.702shifters.com/json_allusers.php"
+    var searchURL = URL(string: "http://www.702shifters.com/json_service.php")
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -31,18 +31,14 @@ class ViewController: UIViewController, UICollectionViewDelegate, UICollectionVi
         
         searchBar.returnKeyType = UIReturnKeyType.done
         
-        //parsePokemonCSV()
-    
         
-        //initAudio()
-        
-        callJSONURL(jsonUrl: searchURL)
+        callJSONURL(jsonUrl: searchURL!)
         //collection.reloadData()
     }
 
-    func callJSONURL(jsonUrl: String) {
-        let url = URL(string: "http://www.702shifters.com/json_service.php")        
-        let task = URLSession.shared.dataTask(with: url!) { (data, response, error) in
+    func callJSONURL(jsonUrl: URL) {
+        let url = jsonUrl
+        let task = URLSession.shared.dataTask(with: url) { (data, response, error) in
             if error != nil {
                 print ("ERROR")
             } else  {
@@ -54,10 +50,10 @@ class ViewController: UIViewController, UICollectionViewDelegate, UICollectionVi
                         repeat {
                             var dict2  = myJson[x] as! [String : String]
                             
-                                let pokeId = Int(dict2["user_id"]!)!
-                                let name = "\(dict2["first_name"]!.lowercased()) \(dict2["last_name"]!.lowercased())"
-                                let poke = Pokemon(name: name, pokedexId: pokeId)
-                                self.pokemon.append(poke)
+                            let pokeId = Int(dict2["user_id"]!)!
+                            let name = "\(dict2["first_name"]!.lowercased()) \(dict2["last_name"]!.lowercased())"
+                            let poke = Pokemon(name: name, pokedexId: pokeId)
+                            self.pokemon.append(poke)
                             x += 1
                         } while ( x < myJson.count)
                         self.collection.reloadData()
@@ -70,22 +66,6 @@ class ViewController: UIViewController, UICollectionViewDelegate, UICollectionVi
         task.resume()
     }
     
-    func initAudio() {
-        
-        let path = Bundle.main.path(forResource: "music", ofType: "mp3")!
-        
-        do {
-            
-            musicPlayer = try AVAudioPlayer(contentsOf: URL(string: path)!)
-            musicPlayer.prepareToPlay()
-            musicPlayer.numberOfLoops = -1
-            musicPlayer.play()
-            
-        } catch let err as NSError {
-            
-            print(err.debugDescription)
-        }
-    }
 
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         
