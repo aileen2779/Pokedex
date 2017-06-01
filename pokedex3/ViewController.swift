@@ -59,6 +59,7 @@ class ViewController: UIViewController, UICollectionViewDelegate, UICollectionVi
                             let emergencyName = String(dict2["emer_contact_name"]!)!
                             let emergencyNum = String(dict2["emer_contact_number"]!)!
                             let phone1 = String(dict2["phone1"]!)!
+                            let email = String(dict2["email"]!)!
                             let name = "\(dict2["first_name"]!.lowercased()) \(dict2["last_name"]!.lowercased())"
                             let shifter = Pokemon(name: name,
                                                 pokedexId: pokeId,
@@ -70,7 +71,8 @@ class ViewController: UIViewController, UICollectionViewDelegate, UICollectionVi
                                                 country: country,
                                                 emergencyName: emergencyName,
                                                 emergencyNum: emergencyNum,
-                                                phone1: phone1
+                                                phone1: phone1,
+                                                email: email
                             )
                             self.shifter.append(shifter)
                             x += 1

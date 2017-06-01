@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		076C6E25300051376ECE0ED0 /* Pods_pokedex3.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 20C889C2740714F5F3685E14 /* Pods_pokedex3.framework */; };
+		7EDDC6C91EDFD6320046333A /* json_service.php in Resources */ = {isa = PBXBuildFile; fileRef = 7EDDC6C81EDFD6320046333A /* json_service.php */; };
 		F9439F141D4331BE00B4B214 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9439F131D4331BE00B4B214 /* AppDelegate.swift */; };
 		F9439F161D4331BE00B4B214 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9439F151D4331BE00B4B214 /* ViewController.swift */; };
 		F9439F191D4331BE00B4B214 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F9439F171D4331BE00B4B214 /* Main.storyboard */; };
@@ -16,13 +17,12 @@
 		F9A0270F1D43522300107657 /* Pokemon.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9A0270E1D43522300107657 /* Pokemon.swift */; };
 		F9B47AE41D45749D00F279FC /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9B47AE31D45749D00F279FC /* Constants.swift */; };
 		F9D0405D1D43D5BF00E52165 /* PokeCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9D0405C1D43D5BF00E52165 /* PokeCell.swift */; };
-		F9D0406D1D44354B00E52165 /* music.png in Resources */ = {isa = PBXBuildFile; fileRef = F9D0406C1D44354B00E52165 /* music.png */; };
-		F9D0406F1D44355700E52165 /* music.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = F9D0406E1D44355700E52165 /* music.mp3 */; };
 		F9D040731D44625A00E52165 /* PokemonDetailVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9D040721D44625A00E52165 /* PokemonDetailVC.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		20C889C2740714F5F3685E14 /* Pods_pokedex3.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_pokedex3.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		7EDDC6C81EDFD6320046333A /* json_service.php */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.script.php; name = json_service.php; path = ../../../../Downloads/json_service.php; sourceTree = "<group>"; };
 		850121C370D34FAEA05601A9 /* Pods-pokedex3.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-pokedex3.debug.xcconfig"; path = "Pods/Target Support Files/Pods-pokedex3/Pods-pokedex3.debug.xcconfig"; sourceTree = "<group>"; };
 		DAECE24C54B75D9A033B22B0 /* Pods-pokedex3.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-pokedex3.release.xcconfig"; path = "Pods/Target Support Files/Pods-pokedex3/Pods-pokedex3.release.xcconfig"; sourceTree = "<group>"; };
 		F9439F101D4331BE00B4B214 /* 702Shifters.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = 702Shifters.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -35,8 +35,6 @@
 		F9A0270E1D43522300107657 /* Pokemon.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Pokemon.swift; sourceTree = "<group>"; };
 		F9B47AE31D45749D00F279FC /* Constants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		F9D0405C1D43D5BF00E52165 /* PokeCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; indentWidth = 2; lastKnownFileType = sourcecode.swift; path = PokeCell.swift; sourceTree = "<group>"; tabWidth = 2; };
-		F9D0406C1D44354B00E52165 /* music.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = music.png; sourceTree = "<group>"; };
-		F9D0406E1D44355700E52165 /* music.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = music.mp3; sourceTree = "<group>"; };
 		F9D040721D44625A00E52165 /* PokemonDetailVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PokemonDetailVC.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -134,8 +132,7 @@
 		F9D0406A1D44347800E52165 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
-				F9D0406C1D44354B00E52165 /* music.png */,
-				F9D0406E1D44355700E52165 /* music.mp3 */,
+				7EDDC6C81EDFD6320046333A /* json_service.php */,
 			);
 			name = Resources;
 			sourceTree = "<group>";
@@ -216,8 +213,7 @@
 				F9439F1E1D4331BE00B4B214 /* LaunchScreen.storyboard in Resources */,
 				F9439F1B1D4331BE00B4B214 /* Assets.xcassets in Resources */,
 				F9439F191D4331BE00B4B214 /* Main.storyboard in Resources */,
-				F9D0406F1D44355700E52165 /* music.mp3 in Resources */,
-				F9D0406D1D44354B00E52165 /* music.png in Resources */,
+				7EDDC6C91EDFD6320046333A /* json_service.php in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

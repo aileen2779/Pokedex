@@ -20,7 +20,8 @@ class Pokemon {
     private var _phone1: String!
     private var _emergencyName: String!
     private var _emergencyNum: String!
-
+    private var _email: String!
+    
     var userName: String {
         if _userName == nil {
             _userName = ""
@@ -99,6 +100,14 @@ class Pokemon {
         return _pokedexId
     }
     
+    
+    var email: String {
+        if _email == nil {
+            _email = ""
+        }
+        return _email
+    }
+    
     init(name: String,
          pokedexId: Int,
          userName: String,
@@ -109,7 +118,8 @@ class Pokemon {
          country: String,
          emergencyName: String,
          emergencyNum: String,
-         phone1: String
+         phone1: String,
+         email: String
          ) {
         
         self._name = name
@@ -123,6 +133,7 @@ class Pokemon {
         self._emergencyName = emergencyName
         self._emergencyNum = emergencyNum
         self._phone1 = phone1
+        self._email = email
         
     }
 
