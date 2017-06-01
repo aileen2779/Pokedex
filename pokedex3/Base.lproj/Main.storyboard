@@ -82,7 +82,7 @@
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Charmander" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="aBa-Qf-u6g">
                                                     <rect key="frame" x="0.0" y="80" width="84" height="25"/>
                                                     <color key="backgroundColor" red="0.55686274509803924" green="0.0" blue="0.12941176470588234" alpha="1" colorSpace="calibratedRGB"/>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="10"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="12"/>
                                                     <color key="textColor" red="0.99194461107254028" green="0.99615627527236938" blue="0.99600595235824585" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
@@ -147,40 +147,6 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="jNV-HM-nK5">
-                                <rect key="frame" x="0.0" y="0.0" width="375" height="65"/>
-                                <subviews>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Shifter Info" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9bB-5D-vYO">
-                                        <rect key="frame" x="37.5" y="36" width="300" height="21"/>
-                                        <constraints>
-                                            <constraint firstAttribute="height" constant="21" id="69u-Jy-t0i"/>
-                                            <constraint firstAttribute="width" constant="300" id="GTe-CZ-QJT"/>
-                                        </constraints>
-                                        <fontDescription key="fontDescription" name=".SFUIText" family=".SF UI Text" pointSize="22"/>
-                                        <color key="textColor" red="0.9959825873374939" green="0.99621325731277466" blue="0.99187678098678589" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                        <nil key="highlightedColor"/>
-                                    </label>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="CKa-dv-WTG">
-                                        <rect key="frame" x="8" y="34" width="35" height="23"/>
-                                        <constraints>
-                                            <constraint firstAttribute="height" constant="23" id="BWD-hT-cOo"/>
-                                            <constraint firstAttribute="width" constant="35" id="lsG-J9-KOU"/>
-                                        </constraints>
-                                        <state key="normal" image="back"/>
-                                        <connections>
-                                            <action selector="backBtnPressed:" destination="kE3-QL-bST" eventType="touchUpInside" id="KJ7-a8-Wbx"/>
-                                        </connections>
-                                    </button>
-                                </subviews>
-                                <color key="backgroundColor" red="0.55686274509803924" green="0.0" blue="0.12941176470588234" alpha="1" colorSpace="calibratedRGB"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="65" id="1I1-AH-diT"/>
-                                    <constraint firstItem="CKa-dv-WTG" firstAttribute="leading" secondItem="jNV-HM-nK5" secondAttribute="leading" constant="8" id="4IF-Da-dGk"/>
-                                    <constraint firstAttribute="bottom" secondItem="CKa-dv-WTG" secondAttribute="bottom" constant="8" id="jtZ-0Q-Yio"/>
-                                    <constraint firstItem="9bB-5D-vYO" firstAttribute="centerX" secondItem="jNV-HM-nK5" secondAttribute="centerX" id="kK2-H1-sRx"/>
-                                    <constraint firstItem="9bB-5D-vYO" firstAttribute="centerY" secondItem="jNV-HM-nK5" secondAttribute="centerY" constant="14" id="qah-fj-n9r"/>
-                                </constraints>
-                            </view>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="n8P-B4-pZu">
                                 <rect key="frame" x="16" y="85" width="343" height="158"/>
                                 <subviews>
@@ -249,7 +215,7 @@
                                 </constraints>
                             </stackView>
                             <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="rde-JI-qIE" userLabel="Phone">
-                                <rect key="frame" x="16" y="318" width="97" height="30"/>
+                                <rect key="frame" x="16" y="318" width="320" height="30"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Phone     " textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hZC-KW-ELq">
                                         <rect key="frame" x="0.0" y="0.0" width="72" height="30"/>
@@ -258,7 +224,7 @@
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" enabled="NO" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="5bm-fC-eld">
-                                        <rect key="frame" x="72" y="0.0" width="25" height="30"/>
+                                        <rect key="frame" x="72" y="0.0" width="248" height="30"/>
                                         <nil key="textColor"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                         <textInputTraits key="textInputTraits"/>
@@ -266,6 +232,7 @@
                                 </subviews>
                                 <constraints>
                                     <constraint firstAttribute="width" relation="lessThanOrEqual" constant="320" id="4NS-QY-x3b"/>
+                                    <constraint firstAttribute="width" constant="320" id="h2i-mq-baF"/>
                                     <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="30" id="tm8-ID-ih9"/>
                                 </constraints>
                             </stackView>
@@ -441,6 +408,41 @@
                                     <constraint firstAttribute="height" relation="lessThanOrEqual" constant="30" id="trG-SA-huK"/>
                                 </constraints>
                             </stackView>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="jNV-HM-nK5">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="65"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Shifter Info" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9bB-5D-vYO">
+                                        <rect key="frame" x="37.5" y="15" width="300" height="21"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="21" id="69u-Jy-t0i"/>
+                                            <constraint firstAttribute="width" constant="300" id="GTe-CZ-QJT"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" name=".SFUIText" family=".SF UI Text" pointSize="22"/>
+                                        <color key="textColor" red="0.9959825873374939" green="0.99621325731277466" blue="0.99187678098678589" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="CKa-dv-WTG">
+                                        <rect key="frame" x="8" y="29" width="35" height="23"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="23" id="BWD-hT-cOo"/>
+                                            <constraint firstAttribute="width" constant="35" id="lsG-J9-KOU"/>
+                                        </constraints>
+                                        <state key="normal" image="back"/>
+                                        <connections>
+                                            <action selector="backBtnPressed:" destination="kE3-QL-bST" eventType="touchUpInside" id="KJ7-a8-Wbx"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                                <color key="backgroundColor" red="0.55686274509803924" green="0.0" blue="0.12941176470588234" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="65" id="1I1-AH-diT"/>
+                                    <constraint firstItem="CKa-dv-WTG" firstAttribute="leading" secondItem="jNV-HM-nK5" secondAttribute="leading" constant="8" id="4IF-Da-dGk"/>
+                                    <constraint firstItem="9bB-5D-vYO" firstAttribute="top" secondItem="jNV-HM-nK5" secondAttribute="top" constant="15" id="cQ1-ra-u4V"/>
+                                    <constraint firstAttribute="bottom" secondItem="CKa-dv-WTG" secondAttribute="bottom" constant="13" id="jtZ-0Q-Yio"/>
+                                    <constraint firstItem="9bB-5D-vYO" firstAttribute="centerX" secondItem="jNV-HM-nK5" secondAttribute="centerX" id="kK2-H1-sRx"/>
+                                    <constraint firstItem="9bB-5D-vYO" firstAttribute="centerY" secondItem="jNV-HM-nK5" secondAttribute="centerY" constant="14" id="qah-fj-n9r"/>
+                                </constraints>
+                            </view>
                         </subviews>
                         <color key="backgroundColor" red="0.99195677042007446" green="0.99622899293899536" blue="0.99192315340042114" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>

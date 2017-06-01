@@ -114,7 +114,7 @@ class PokemonDetailVC: UIViewController {
         emailText.isHidden = true
         
         userIdLabel.text    = "Membership    "
-        phoneLabel.text     = "Payment       "
+        phoneLabel.text     = "Payment          "
         addressLabel.text   = "Payment Type  "
         cityLabel.text      = "Status        "
         stateLabel.text     = "Start  "
