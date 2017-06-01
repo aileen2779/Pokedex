@@ -12,9 +12,11 @@ class PokemonDetailVC: UIViewController {
     
     var pokemon: Pokemon!
     
+    @IBOutlet weak var phoneLabel: UILabel!
+
     @IBOutlet weak var nameLbl: UILabel!
     @IBOutlet weak var mainImg: UIImageView!
-    @IBOutlet weak var descriptionLbl: UILabel!
+
 
     @IBOutlet weak var userIdText: UITextField!
     @IBOutlet weak var phoneText: UITextField!
@@ -25,6 +27,14 @@ class PokemonDetailVC: UIViewController {
     @IBOutlet weak var countryText: UITextField!
     @IBOutlet weak var emerNameText: UITextField!
     @IBOutlet weak var emerNumText: UITextField!
+ 
+    @IBAction func memberNonMember(_ sender: UISegmentedControl) {
+        if sender.selectedSegmentIndex == 0 {
+            self.updateUI()
+        } else {
+            self.updateUIWithMember()
+        }
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -45,7 +55,6 @@ class PokemonDetailVC: UIViewController {
     }
     
     func updateUI() {
-      
         userIdText.text = pokemon.userName
         phoneText.text = pokemon.phone1
         address1Text.text = pokemon.address1
@@ -55,6 +64,18 @@ class PokemonDetailVC: UIViewController {
         countryText.text = pokemon.country
         emerNameText.text = pokemon.emergencyName
         emerNumText.text = pokemon.emergencyNum
+    }
+
+    func updateUIWithMember() {
+        userIdText.text = ""
+        phoneText.text = ""
+        address1Text.text = ""
+        cityText.text = ""
+        stateText.text = ""
+        zipText.text = ""
+        countryText.text = ""
+        emerNameText.text = ""
+        emerNumText.text = ""
     }
     
     @IBAction func backBtnPressed(_ sender: UIButton) {

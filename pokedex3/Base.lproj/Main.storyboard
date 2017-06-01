@@ -143,7 +143,7 @@
                         <viewControllerLayoutGuide type="top" id="0zK-AE-Tat"/>
                         <viewControllerLayoutGuide type="bottom" id="590-ug-qtw"/>
                     </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="eHX-c7-dII">
+                    <view key="view" contentMode="scaleAspectFit" id="eHX-c7-dII">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
@@ -197,23 +197,20 @@
                                                     <segment title="Membership"/>
                                                 </segments>
                                                 <color key="tintColor" red="0.5568627451" green="0.0" blue="0.12941176469999999" alpha="1" colorSpace="calibratedRGB"/>
+                                                <connections>
+                                                    <action selector="memberNonMember:" destination="kE3-QL-bST" eventType="valueChanged" id="j58-Ef-KMr"/>
+                                                </connections>
                                             </segmentedControl>
                                             <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="rGU-Ut-sPI">
                                                 <rect key="frame" x="0.0" y="38" width="343" height="120"/>
                                                 <subviews>
-                                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="gL1-pW-6UF">
-                                                        <rect key="frame" x="0.0" y="0.0" width="120" height="120"/>
+                                                    <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="gL1-pW-6UF">
+                                                        <rect key="frame" x="0.0" y="0.0" width="343" height="120"/>
                                                         <constraints>
                                                             <constraint firstAttribute="height" constant="120" id="XaY-z6-6QT"/>
                                                             <constraint firstAttribute="width" constant="120" id="sri-ct-1RG"/>
                                                         </constraints>
                                                     </imageView>
-                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="  " textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="10" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="05l-Ey-18T">
-                                                        <rect key="frame" x="120" y="0.0" width="223" height="120"/>
-                                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                        <nil key="textColor"/>
-                                                        <nil key="highlightedColor"/>
-                                                    </label>
                                                 </subviews>
                                             </stackView>
                                         </subviews>
@@ -485,11 +482,11 @@
                         <outlet property="address1Text" destination="1jz-4k-taV" id="PKf-iL-aXh"/>
                         <outlet property="cityText" destination="6R1-pM-jKX" id="kQ1-dl-XeI"/>
                         <outlet property="countryText" destination="2k3-9f-6jk" id="Vye-nl-hnf"/>
-                        <outlet property="descriptionLbl" destination="05l-Ey-18T" id="Cfi-kC-5ba"/>
                         <outlet property="emerNameText" destination="hwm-b9-qaB" id="S2J-sp-zev"/>
                         <outlet property="emerNumText" destination="r3u-Nz-34Z" id="mcC-7c-db6"/>
                         <outlet property="mainImg" destination="gL1-pW-6UF" id="qag-bG-214"/>
                         <outlet property="nameLbl" destination="9bB-5D-vYO" id="8SK-Lc-EtP"/>
+                        <outlet property="phoneLabel" destination="hZC-KW-ELq" id="xMa-bh-d0B"/>
                         <outlet property="phoneText" destination="5bm-fC-eld" id="XBk-U3-JKw"/>
                         <outlet property="stateText" destination="b3G-fZ-XlG" id="psj-3J-wH7"/>
                         <outlet property="userIdText" destination="bJK-Cf-2yo" id="dXD-Ur-oKu"/>
@@ -498,7 +495,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="hmf-ZM-KT5" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1106" y="174"/>
+            <point key="canvasLocation" x="888.79999999999995" y="277.51124437781112"/>
         </scene>
     </scenes>
     <resources>

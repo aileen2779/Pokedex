@@ -1,10 +1,7 @@
 //
 //  Pokemon.swift
 //  pokedex3
-//
-//  Created by Jonny B on 7/23/16.
-//  Copyright © 2016 Jonny B. All rights reserved.
-//
+
 
 import Foundation
 import Alamofire
@@ -15,9 +12,6 @@ class Pokemon {
     private var _userName: String!
     private var _pokedexId: Int!
     private var _description: String!
-//    private var _type: String!
-//    private var _defense: String!
-//    private var _height: String!
     private var _address1: String!
     private var _city: String!
     private var _state: String!
@@ -26,15 +20,7 @@ class Pokemon {
     private var _phone1: String!
     private var _emergencyName: String!
     private var _emergencyNum: String!
-//    private var _weight: String!
-//    private var _attack: String!
-//    private var _nextEvolutionTxt: String!
-//    private var _nextEvolutionName: String!
-//    private var _nextEvolutionId: String!
-//    private var _nextEvolutionLevel: String!
-    private var _pokemonURL: String!
-    
-    
+
     var userName: String {
         if _userName == nil {
             _userName = ""
@@ -105,8 +91,6 @@ class Pokemon {
         return _phone1
     }
     
-    
-    
     var name: String {
         return _name
     }
@@ -139,7 +123,6 @@ class Pokemon {
         self._emergencyName = emergencyName
         self._emergencyNum = emergencyNum
         self._phone1 = phone1
-//        self._pokemonURL = "\(URL_BASE)\(URL_POKEMON)\(self.pokedexId)/"
         
     }
 
