@@ -15,7 +15,6 @@ class PokemonDetailVC: UIViewController {
 
     @IBOutlet weak var nameLbl: UILabel!
     @IBOutlet weak var mainImg: UIImageView!
-
     
     @IBOutlet weak var userIdLabel: UILabel!
     @IBOutlet weak var phoneLabel: UILabel!
@@ -50,6 +49,7 @@ class PokemonDetailVC: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
+        
         nameLbl.text = pokemon.name.capitalized
         
         let img = UIImage(named: "\(pokemon.pokedexId)")
@@ -65,29 +65,29 @@ class PokemonDetailVC: UIViewController {
         
     }
     
-    func updateUI() {
-        userIdText.text = ""
-        phoneText.text = ""
-        address1Text.text = ""
-        cityText.text = ""
-        stateText.text = ""
-        zipText.text = ""
+    func updateUIWithMember() {
+        userIdText.text     = ""
+        phoneText.text      = ""
+        address1Text.text   = ""
+        cityText.text       = ""
+        stateText.text      = ""
+        zipText.text        = ""
         countryText.isHidden = false
         emerNameText.isHidden = false
         emerNumText.isHidden = false
-        emailText.isHidden = false
+        emailText.isHidden  = false
 
         
-        userIdText.text = pokemon.userName
-        phoneText.text = pokemon.phone1
-        address1Text.text = pokemon.address1
-        cityText.text = pokemon.city
-        stateText.text = pokemon.state
-        zipText.text = pokemon.zip
-        countryText.text = pokemon.country
-        emerNameText.text = pokemon.emergencyName
-        emerNumText.text = pokemon.emergencyNum
-        emailText.text = pokemon.email
+        userIdText.text     = pokemon.userName
+        phoneText.text      = pokemon.phone1
+        address1Text.text   = pokemon.address1
+        cityText.text       = pokemon.city
+        stateText.text      = pokemon.state
+        zipText.text        = pokemon.zip
+        countryText.text    = pokemon.country
+        emerNameText.text   = pokemon.emergencyName
+        emerNumText.text    = pokemon.emergencyNum
+        emailText.text      = pokemon.email
         
         userIdLabel.text    = "User ID   "
         phoneLabel.text     = "Phone     "
@@ -98,20 +98,20 @@ class PokemonDetailVC: UIViewController {
         countryLabel.text   = "Country  "
         emerNameLabel.text  = "Emer. Name "
         emerNumLabel.text   = "Emer. Phone "
-        emailLabel.text      = "Email      "
+        emailLabel.text     = "Email      "
     }
 
-    func updateUIWithMember() {
-        userIdText.text = ""
-        phoneText.text = ""
-        address1Text.text = ""
-        cityText.text = ""
-        stateText.text = "01/01/1999"
-        zipText.text  = "01/01/2000"
+    func updateUI() {
+        userIdText.text     = ""
+        phoneText.text      = ""
+        address1Text.text   = ""
+        cityText.text       = ""
+        stateText.text      = "01/01/1999"
+        zipText.text        = "01/01/2000"
         countryText.isHidden = true
         emerNameText.isHidden = true
         emerNumText.isHidden = true
-        emailText.isHidden = true
+        emailText.isHidden  = true
         
         userIdLabel.text    = "Membership    "
         phoneLabel.text     = "Payment          "
@@ -119,10 +119,10 @@ class PokemonDetailVC: UIViewController {
         cityLabel.text      = "Status        "
         stateLabel.text     = "Start  "
         zipLabel.text       = "  Expire  "
-        countryLabel.text = ""
-        emerNameLabel.text = ""
-        emerNumLabel.text = ""
-        emailLabel.text = ""
+        countryLabel.text   = ""
+        emerNameLabel.text  = ""
+        emerNumLabel.text   = ""
+        emailLabel.text     = ""
         
     }
     

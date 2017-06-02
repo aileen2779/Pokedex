@@ -15,10 +15,12 @@ class ViewController: UIViewController, UICollectionViewDelegate, UICollectionVi
     
     var shifter = [Pokemon]()
     var filteredPokemon = [Pokemon]()
-    var musicPlayer: AVAudioPlayer!
     var inSearchMode = false
     
     var searchURL = URL_BASE
+
+    //@IBOutlet var appsTableView : UITableView?
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -31,9 +33,11 @@ class ViewController: UIViewController, UICollectionViewDelegate, UICollectionVi
         
         
         callJSONURL(jsonUrl: searchURL!)
-        //collection.reloadData()
+        
     }
 
+    
+    
     func callJSONURL(jsonUrl: URL) {
         let url = jsonUrl
         let task = URLSession.shared.dataTask(with: url) { (data, response, error) in
@@ -78,16 +82,28 @@ class ViewController: UIViewController, UICollectionViewDelegate, UICollectionVi
                             x += 1
                         } while ( x < myJson.count)
                         self.shifter.sort(by: {$0.name < $1.name})
-                        self.collection.reloadData()
+                        
                     } catch {
                         print("done")
                     }
                 }
+                
+               // refresh the collection view
+               self.do_refresh();
             }
         }
         task.resume()
     }
     
+    // refresh the screen
+    func do_refresh()
+    {
+        DispatchQueue.main.async(execute: {
+            self.collection.reloadData()
+            return
+        })
+    }
+
 
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         

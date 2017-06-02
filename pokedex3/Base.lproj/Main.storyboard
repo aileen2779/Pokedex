@@ -159,8 +159,8 @@
                                                     <constraint firstAttribute="height" constant="28" id="fjI-7z-cby"/>
                                                 </constraints>
                                                 <segments>
-                                                    <segment title="Member Details"/>
                                                     <segment title="Membership"/>
+                                                    <segment title="Member Info"/>
                                                 </segments>
                                                 <color key="tintColor" red="0.5568627451" green="0.0" blue="0.12941176469999999" alpha="1" colorSpace="calibratedRGB"/>
                                                 <connections>
