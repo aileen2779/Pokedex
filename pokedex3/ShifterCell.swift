@@ -13,7 +13,7 @@ class PokeCell: UICollectionViewCell {
     @IBOutlet weak var thumbImg: UIImageView!
     @IBOutlet weak var nameLbl: UILabel!
     
-    var pokemon: ShifterClass!
+    var shifter: ShifterClass!
     
     required init?(coder aDecoder: NSCoder){
         super.init(coder: aDecoder)
@@ -22,12 +22,12 @@ class PokeCell: UICollectionViewCell {
     }
     
     
-    func configureCell(_ pokemon: ShifterClass) {
+    func configureCell(_ shifter: ShifterClass) {
         
-        self.pokemon = pokemon
+        self.shifter = shifter
         
-        nameLbl.text = self.pokemon.name.capitalized
-        thumbImg.image = UIImage(named: "\(self.pokemon.pokedexId)")
+        nameLbl.text = self.shifter.name.capitalized
+        thumbImg.image = UIImage(named: "\(self.shifter.userId)")
         
     }
     

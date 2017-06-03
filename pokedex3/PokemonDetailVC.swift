@@ -10,7 +10,7 @@ import UIKit
 
 class PokemonDetailVC: UIViewController {
     
-    var pokemon: ShifterClass!
+    var shifter: ShifterClass!
     
 
     @IBOutlet weak var nameLbl: UILabel!
@@ -49,10 +49,9 @@ class PokemonDetailVC: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
+        nameLbl.text = shifter.name.capitalized
         
-        nameLbl.text = pokemon.name.capitalized
-        
-        let img = UIImage(named: "\(pokemon.pokedexId)")
+        let img = UIImage(named: "\(shifter.userId)")
         
         mainImg.image = img
 
@@ -78,16 +77,16 @@ class PokemonDetailVC: UIViewController {
         emailText.isHidden  = false
 
         
-        userIdText.text     = pokemon.userName
-        phoneText.text      = pokemon.phone1
-        address1Text.text   = pokemon.address1
-        cityText.text       = pokemon.city
-        stateText.text      = pokemon.state
-        zipText.text        = pokemon.zip
-        countryText.text    = pokemon.country
-        emerNameText.text   = pokemon.emergencyName
-        emerNumText.text    = pokemon.emergencyNum
-        emailText.text      = pokemon.email
+        userIdText.text     = shifter.userName
+        phoneText.text      = shifter.phone1
+        address1Text.text   = shifter.address1
+        cityText.text       = shifter.city
+        stateText.text      = shifter.state
+        zipText.text        = shifter.zip
+        countryText.text    = shifter.country
+        emerNameText.text   = shifter.emergencyName
+        emerNumText.text    = shifter.emergencyNum
+        emailText.text      = shifter.email
         
         userIdLabel.text    = "User ID   "
         phoneLabel.text     = "Phone     "

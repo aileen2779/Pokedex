@@ -61,10 +61,14 @@ class ViewController: UIViewController, UICollectionViewDelegate, UICollectionVi
                         
                         var x = 0
                         //print(myJson)
+                        
+                        // remove array to prevent duplicates
+                        self.shifter.removeAll()
+                        
                         repeat {
                             var dict2  = myJson[x] as! [String : String]
                             
-                            let pokeId      = Int(dict2["user_id"]!)!
+                            let userId      = Int(dict2["user_id"]!)!
                             let userName    = String(dict2["user_name"]!)!
                             let address1    = String(dict2["addr1"]!)!
                             let city        = String(dict2["city"]!)!
@@ -77,7 +81,7 @@ class ViewController: UIViewController, UICollectionViewDelegate, UICollectionVi
                             let email = String(dict2["email"]!)!
                             let name = "\(dict2["first_name"]!.lowercased()) \(dict2["last_name"]!.lowercased())"
                             let shifter = ShifterClass(name: name,
-                                                pokedexId: pokeId,
+                                                userId: userId,
                                                 userName: userName,
                                                 address1: address1,
                                                 city: city,
@@ -192,7 +196,7 @@ class ViewController: UIViewController, UICollectionViewDelegate, UICollectionVi
         if segue.identifier == "PokemonDetailVC" {
             if let detailsVC = segue.destination as? PokemonDetailVC {
                 if let shiftClassVar = sender as? ShifterClass {
-                    detailsVC.pokemon = shiftClassVar
+                    detailsVC.shifter = shiftClassVar
                 }
             }
         }
