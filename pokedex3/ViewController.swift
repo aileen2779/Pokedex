@@ -14,12 +14,12 @@ class ViewController: UIViewController, UICollectionViewDelegate, UICollectionVi
     @IBOutlet weak var searchBar: UISearchBar!
     
     var shifter = [ShifterClass]()
-    var filteredPokemon = [ShifterClass]()
+    var filteredShifter = [ShifterClass]()
     var inSearchMode = false
     
     var searchURL = URL_BASE
 
-    //@IBOutlet var appsTableView : UITableView?
+    var refreshControl: UIRefreshControl!
     
     
     override func viewDidLoad() {
@@ -31,12 +31,23 @@ class ViewController: UIViewController, UICollectionViewDelegate, UICollectionVi
         
         searchBar.returnKeyType = UIReturnKeyType.done
         
-        
         callJSONURL(jsonUrl: searchURL!)
         
+        // pull to refresh routune
+        self.refreshControl = UIRefreshControl()
+        self.refreshControl.attributedTitle = NSAttributedString(string: "Pull to refresh")
+        self.refreshControl.addTarget(self, action: #selector(refresh), for: UIControlEvents.valueChanged)
+        collection!.addSubview(refreshControl)
+
     }
 
-    
+    func refresh(sender:AnyObject)
+    {
+        // Updating your data here...
+        callJSONURL(jsonUrl: searchURL!)
+        self.collection.reloadData()
+        self.refreshControl?.endRefreshing()
+    }
     
     func callJSONURL(jsonUrl: URL) {
         let url = jsonUrl
@@ -110,7 +121,7 @@ class ViewController: UIViewController, UICollectionViewDelegate, UICollectionVi
         if let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "PokeCell", for: indexPath) as? PokeCell {
             let shiftClassVar: ShifterClass!
             if inSearchMode {
-                shiftClassVar = filteredPokemon[indexPath.row]
+                shiftClassVar = filteredShifter[indexPath.row]
                 cell.configureCell(shiftClassVar)
             } else {
                 shiftClassVar = shifter[indexPath.row]
@@ -128,7 +139,7 @@ class ViewController: UIViewController, UICollectionViewDelegate, UICollectionVi
         var shiftClassVar: ShifterClass!
         
         if inSearchMode {
-            shiftClassVar = filteredPokemon[indexPath.row]
+            shiftClassVar = filteredShifter[indexPath.row]
         } else {
             shiftClassVar = shifter[indexPath.row]
         }
@@ -139,7 +150,7 @@ class ViewController: UIViewController, UICollectionViewDelegate, UICollectionVi
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         if inSearchMode {
-            return filteredPokemon.count
+            return filteredShifter.count
         }
         return shifter.count
     }
@@ -166,7 +177,7 @@ class ViewController: UIViewController, UICollectionViewDelegate, UICollectionVi
         } else {
             inSearchMode = true
             let lower = searchBar.text!.lowercased()
-            filteredPokemon = shifter.filter({$0.name.range(of: lower) != nil})
+            filteredShifter = shifter.filter({$0.name.range(of: lower) != nil})
             collection.reloadData()
         }
         
