@@ -9,6 +9,6 @@
 import Foundation
 
 let URL_BASE = URL(string: "http://www.702shifters.com/json_service.php")
-let URL_POKEMON = "/api/v1/pokemon/"
+//let URL_POKEMON = "/api/v1/pokemon/"
 
 typealias DownloadComplete = () -> ()

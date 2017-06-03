@@ -13,8 +13,8 @@ class ViewController: UIViewController, UICollectionViewDelegate, UICollectionVi
     @IBOutlet weak var collection: UICollectionView!
     @IBOutlet weak var searchBar: UISearchBar!
     
-    var shifter = [Pokemon]()
-    var filteredPokemon = [Pokemon]()
+    var shifter = [ShifterClass]()
+    var filteredPokemon = [ShifterClass]()
     var inSearchMode = false
     
     var searchURL = URL_BASE
@@ -65,7 +65,7 @@ class ViewController: UIViewController, UICollectionViewDelegate, UICollectionVi
                             let phone1 = String(dict2["phone1"]!)!
                             let email = String(dict2["email"]!)!
                             let name = "\(dict2["first_name"]!.lowercased()) \(dict2["last_name"]!.lowercased())"
-                            let shifter = Pokemon(name: name,
+                            let shifter = ShifterClass(name: name,
                                                 pokedexId: pokeId,
                                                 userName: userName,
                                                 address1: address1,
@@ -108,7 +108,7 @@ class ViewController: UIViewController, UICollectionViewDelegate, UICollectionVi
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         
         if let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "PokeCell", for: indexPath) as? PokeCell {
-            let shiftClassVar: Pokemon!
+            let shiftClassVar: ShifterClass!
             if inSearchMode {
                 shiftClassVar = filteredPokemon[indexPath.row]
                 cell.configureCell(shiftClassVar)
@@ -125,7 +125,7 @@ class ViewController: UIViewController, UICollectionViewDelegate, UICollectionVi
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
 
-        var shiftClassVar: Pokemon!
+        var shiftClassVar: ShifterClass!
         
         if inSearchMode {
             shiftClassVar = filteredPokemon[indexPath.row]
@@ -180,7 +180,7 @@ class ViewController: UIViewController, UICollectionViewDelegate, UICollectionVi
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "PokemonDetailVC" {
             if let detailsVC = segue.destination as? PokemonDetailVC {
-                if let shiftClassVar = sender as? Pokemon {
+                if let shiftClassVar = sender as? ShifterClass {
                     detailsVC.pokemon = shiftClassVar
                 }
             }

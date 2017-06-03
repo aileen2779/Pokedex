@@ -6,7 +6,7 @@
 import Foundation
 import Alamofire
 
-class Pokemon {
+class ShifterClass {
     
     private var _name: String!
     private var _userName: String!
@@ -42,7 +42,7 @@ class Pokemon {
         }
         return _address1
     }
-
+    
     var city: String {
         if _city == nil {
             _city = ""
@@ -56,7 +56,7 @@ class Pokemon {
         }
         return _state
     }
-
+    
     var zip: String {
         if _zip == nil {
             _zip = ""
@@ -70,21 +70,21 @@ class Pokemon {
         }
         return _country
     }
-
+    
     var emergencyName: String {
         if _emergencyName == nil {
             _emergencyName = ""
         }
         return _emergencyName
     }
-
+    
     var emergencyNum: String {
         if _emergencyNum == nil {
             _emergencyNum = ""
         }
         return _emergencyNum
     }
-
+    
     var phone1: String {
         if _phone1 == nil {
             _phone1 = ""
@@ -120,7 +120,7 @@ class Pokemon {
          emergencyNum: String,
          phone1: String,
          email: String
-         ) {
+        ) {
         
         self._name = name
         self._pokedexId = pokedexId
@@ -136,6 +136,6 @@ class Pokemon {
         self._email = email
         
     }
-
+    
 }
 

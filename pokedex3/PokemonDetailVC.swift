@@ -10,7 +10,7 @@ import UIKit
 
 class PokemonDetailVC: UIViewController {
     
-    var pokemon: Pokemon!
+    var pokemon: ShifterClass!
     
 
     @IBOutlet weak var nameLbl: UILabel!
