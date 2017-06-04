@@ -31,7 +31,11 @@ class ViewController: UIViewController, UICollectionViewDelegate, UICollectionVi
         
         searchBar.returnKeyType = UIReturnKeyType.done
         
+        
+     
+        
         callJSONURL(jsonUrl: searchURL!)
+        
         
         // pull to refresh routune
         self.refreshControl = UIRefreshControl()
@@ -50,6 +54,8 @@ class ViewController: UIViewController, UICollectionViewDelegate, UICollectionVi
     }
     
     func callJSONURL(jsonUrl: URL) {
+        
+        
         let url = jsonUrl
         let task = URLSession.shared.dataTask(with: url) { (data, response, error) in
             if error != nil {
