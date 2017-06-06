@@ -1,7 +1,6 @@
 //
 //  Constants.swift
-//  pokedex3
-//
+//  pokedex3  //
 //  Created by Jonny B on 7/24/16.
 //  Copyright © 2016 Jonny B. All rights reserved.
 //
@@ -9,14 +8,13 @@
 import Foundation
 
 //  Make a variable equal to a random number....
-let randomNum:UInt32 = arc4random_uniform(100) // range is 0 to 99
+let randomNum:UInt32 = arc4random_uniform(1000) // range is 0 to 99
 
 // convert the UInt32 to some other  types
 let randomTime:TimeInterval = TimeInterval(randomNum)
 let someInt:Int = Int(randomNum)
 let someString:String = String(randomNum) //string works too
-let URLToken = ("http://www.702shifters.com/json_service.php?id=\(someString)")     // assign a new id everytime so the URL is forced to refresh
-
+let URLToken = ("http://www.702shifters.com/json_service.php?token=\(someString)")     // assign a new id everytime so the URL is forced to refresh
 
 let URL_BASE = URL(string: URLToken)
 //let URL_POKEMON = "/api/v1/pokemon/"

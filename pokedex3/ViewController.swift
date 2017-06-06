@@ -57,6 +57,7 @@ class ViewController: UIViewController, UICollectionViewDelegate, UICollectionVi
         
         
         let url = jsonUrl
+
         let task = URLSession.shared.dataTask(with: url) { (data, response, error) in
             if error != nil {
                 print ("ERROR")
