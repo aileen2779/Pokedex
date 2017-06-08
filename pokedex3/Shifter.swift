@@ -21,6 +21,7 @@ class ShifterClass {
     private var _emergencyName: String!
     private var _emergencyNum: String!
     private var _email: String!
+    private var _membership: String!
     
     var userName: String {
         if _userName == nil {
@@ -108,6 +109,13 @@ class ShifterClass {
         return _email
     }
     
+    var membership: String {
+        if _membership == nil {
+            _membership = ""
+        }
+        return _membership
+    }
+    
     init(name: String,
          userId: Int,
          userName: String,
@@ -119,7 +127,8 @@ class ShifterClass {
          emergencyName: String,
          emergencyNum: String,
          phone1: String,
-         email: String
+         email: String,
+         membership: String
         ) {
         
         self._name = name
@@ -134,6 +143,7 @@ class ShifterClass {
         self._emergencyNum = emergencyNum
         self._phone1 = phone1
         self._email = email
+        self._membership = membership
         
     }
     

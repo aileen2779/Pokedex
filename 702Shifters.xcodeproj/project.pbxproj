@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		076C6E25300051376ECE0ED0 /* Pods_pokedex3.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 20C889C2740714F5F3685E14 /* Pods_pokedex3.framework */; };
+		7E1AF1AC1EEA1009005C7D41 /* CustomTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E1AF1AB1EEA1009005C7D41 /* CustomTextField.swift */; };
 		7E2339D41EE71B6C0016AF23 /* MainController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E2339D31EE71B6C0016AF23 /* MainController.swift */; };
 		7EDDC6C91EDFD6320046333A /* json_service.php in Resources */ = {isa = PBXBuildFile; fileRef = 7EDDC6C81EDFD6320046333A /* json_service.php */; };
 		F9439F141D4331BE00B4B214 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9439F131D4331BE00B4B214 /* AppDelegate.swift */; };
@@ -23,6 +24,7 @@
 
 /* Begin PBXFileReference section */
 		20C889C2740714F5F3685E14 /* Pods_pokedex3.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_pokedex3.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		7E1AF1AB1EEA1009005C7D41 /* CustomTextField.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = CustomTextField.swift; path = ../../DreamLister/DreamLister/CustomTextField.swift; sourceTree = "<group>"; };
 		7E2339D31EE71B6C0016AF23 /* MainController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainController.swift; sourceTree = "<group>"; };
 		7EDDC6C81EDFD6320046333A /* json_service.php */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.script.php; name = json_service.php; path = ../../../../Downloads/json_service.php; sourceTree = "<group>"; };
 		850121C370D34FAEA05601A9 /* Pods-pokedex3.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-pokedex3.debug.xcconfig"; path = "Pods/Target Support Files/Pods-pokedex3/Pods-pokedex3.debug.xcconfig"; sourceTree = "<group>"; };
@@ -135,6 +137,7 @@
 		F9D0406A1D44347800E52165 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				7E1AF1AB1EEA1009005C7D41 /* CustomTextField.swift */,
 				7EDDC6C81EDFD6320046333A /* json_service.php */,
 			);
 			name = Resources;
@@ -279,6 +282,7 @@
 				7E2339D41EE71B6C0016AF23 /* MainController.swift in Sources */,
 				F9439F161D4331BE00B4B214 /* ViewController.swift in Sources */,
 				F9439F141D4331BE00B4B214 /* AppDelegate.swift in Sources */,
+				7E1AF1AC1EEA1009005C7D41 /* CustomTextField.swift in Sources */,
 				F9D040731D44625A00E52165 /* PokemonDetailVC.swift in Sources */,
 				F9B47AE41D45749D00F279FC /* Constants.swift in Sources */,
 				F9A0270F1D43522300107657 /* Shifter.swift in Sources */,

@@ -101,7 +101,7 @@ class PokemonDetailVC: UIViewController {
     }
 
     func updateUI() {
-        userIdText.text     = ""
+        userIdText.text     = shifter.membership
         phoneText.text      = ""
         address1Text.text   = ""
         cityText.text       = ""

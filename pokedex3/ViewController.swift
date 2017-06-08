@@ -84,8 +84,9 @@ class ViewController: UIViewController, UICollectionViewDelegate, UICollectionVi
                             let country     = String(dict2["country"]!)!
                             let emergencyName = String(dict2["emer_contact_name"]!)!
                             let emergencyNum = String(dict2["emer_contact_number"]!)!
-                            let phone1 = String(dict2["phone1"]!)!
-                            let email = String(dict2["email"]!)!
+                            let phone1      = String(dict2["phone1"]!)!
+                            let email       = String(dict2["email"]!)!
+                            let membership  = String(dict2["membership"]!)!
                             let name = "\(dict2["first_name"]!.lowercased()) \(dict2["last_name"]!.lowercased())"
                             let shifter = ShifterClass(name: name,
                                                 userId: userId,
@@ -98,7 +99,8 @@ class ViewController: UIViewController, UICollectionViewDelegate, UICollectionVi
                                                 emergencyName: emergencyName,
                                                 emergencyNum: emergencyNum,
                                                 phone1: phone1,
-                                                email: email
+                                                email: email,
+                                                membership: membership
                             )
                             self.shifter.append(shifter)
                             x += 1
