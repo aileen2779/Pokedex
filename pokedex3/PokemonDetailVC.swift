@@ -101,12 +101,24 @@ class PokemonDetailVC: UIViewController {
     }
 
     func updateUI() {
+
+        let price = Double(shifter.membership_paid)
+        
+        let currencyFormatter = NumberFormatter()
+        currencyFormatter.usesGroupingSeparator = true
+        currencyFormatter.numberStyle = NumberFormatter.Style.currency
+        // localize to your grouping and decimal separator
+        currencyFormatter.locale = NSLocale.current
+        let priceString = currencyFormatter.string(from: price! as NSNumber)
+               
         userIdText.text     = shifter.membership
-        phoneText.text      = ""
-        address1Text.text   = ""
-        cityText.text       = ""
-        stateText.text      = "01/01/1999"
-        zipText.text        = "01/01/2000"
+        phoneText.text      = priceString
+        address1Text.text   = shifter.payment_gateway
+        cityText.text       = shifter.membership_status
+        stateText.text      = shifter.membership_start
+        zipText.text        = shifter.membership_end
+
+
         countryText.isHidden = true
         emerNameText.isHidden = true
         emerNumText.isHidden = true

@@ -23,6 +23,13 @@ class ShifterClass {
     private var _email: String!
     private var _membership: String!
     
+    private var _membership_paid: String!
+    private var _membership_start: String!
+    private var _membership_end: String!
+    private var _membership_status: String!
+    private var _payment_gateway: String!
+
+    
     var userName: String {
         if _userName == nil {
             _userName = ""
@@ -116,6 +123,45 @@ class ShifterClass {
         return _membership
     }
     
+    
+
+    var membership_paid: String {
+        if _membership_paid == nil {
+            _membership_paid = ""
+        }
+        return _membership_paid
+    }
+    
+    var membership_start: String {
+        if _membership_start == nil {
+            _membership_start = ""
+        }
+        return _membership_start
+    }
+    
+    var membership_end: String {
+        if _membership_end == nil {
+            _membership_end = ""
+        }
+        return _membership_end
+    }
+    
+    var membership_status: String {
+        if _membership_status == nil {
+            _membership_status = ""
+        }
+        return _membership_status
+    }
+    
+    var payment_gateway: String {
+        if _payment_gateway == nil {
+            _payment_gateway = ""
+        }
+        return _payment_gateway
+    }
+    
+    
+    
     init(name: String,
          userId: Int,
          userName: String,
@@ -128,7 +174,12 @@ class ShifterClass {
          emergencyNum: String,
          phone1: String,
          email: String,
-         membership: String
+         membership: String,
+         membership_paid: String,
+         membership_start: String,
+         membership_end: String,
+         membership_status: String,
+         payment_gateway: String
         ) {
         
         self._name = name
@@ -144,6 +195,11 @@ class ShifterClass {
         self._phone1 = phone1
         self._email = email
         self._membership = membership
+        self._membership_paid = membership_paid
+        self._membership_start = membership_start
+        self._membership_end = membership_end
+        self._membership_status = membership_status
+        self._payment_gateway = payment_gateway
         
     }
     

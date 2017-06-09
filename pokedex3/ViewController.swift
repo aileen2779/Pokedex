@@ -75,18 +75,25 @@ class ViewController: UIViewController, UICollectionViewDelegate, UICollectionVi
                         repeat {
                             var dict2  = myJson[x] as! [String : String]
                             
-                            let userId      = Int(dict2["user_id"]!)!
-                            let userName    = String(dict2["user_name"]!)!
-                            let address1    = String(dict2["addr1"]!)!
-                            let city        = String(dict2["city"]!)!
-                            let state       = String(dict2["state"]!)!
-                            let zip         = String(dict2["zip"]!)!
-                            let country     = String(dict2["country"]!)!
-                            let emergencyName = String(dict2["emer_contact_name"]!)!
-                            let emergencyNum = String(dict2["emer_contact_number"]!)!
-                            let phone1      = String(dict2["phone1"]!)!
-                            let email       = String(dict2["email"]!)!
-                            let membership  = String(dict2["membership"]!)!
+                            let userId              = Int(dict2["user_id"]!)!
+                            let userName            = String(dict2["user_name"]!)!
+                            let address1            = String(dict2["addr1"]!)!
+                            let city                = String(dict2["city"]!)!
+                            let state               = String(dict2["state"]!)!
+                            let zip                 = String(dict2["zip"]!)!
+                            let country             = String(dict2["country"]!)!
+                            let emergencyName       = String(dict2["emer_contact_name"]!)!
+                            let emergencyNum        = String(dict2["emer_contact_number"]!)!
+                            let phone1              = String(dict2["phone1"]!)!
+                            let email               = String(dict2["email"]!)!
+                            let membership          = String(dict2["membership"]!)!
+                            
+                            let membership_paid     = String(dict2["membership_paid"]!)!
+                            let membership_start    = String(dict2["membership_start"]!)!
+                            let membership_end      = String(dict2["membership_end"]!)!
+                            let membership_status   = String(dict2["membership_status"]!)!
+                            let payment_gateway     = String(dict2["payment_gateway"]!)!
+                            
                             let name = "\(dict2["first_name"]!.lowercased()) \(dict2["last_name"]!.lowercased())"
                             let shifter = ShifterClass(name: name,
                                                 userId: userId,
@@ -100,7 +107,12 @@ class ViewController: UIViewController, UICollectionViewDelegate, UICollectionVi
                                                 emergencyNum: emergencyNum,
                                                 phone1: phone1,
                                                 email: email,
-                                                membership: membership
+                                                membership: membership,
+                                                membership_paid: membership_paid,
+                                                membership_start: membership_start,
+                                                membership_end: membership_end,
+                                                membership_status: membership_status,
+                                                payment_gateway: payment_gateway
                             )
                             self.shifter.append(shifter)
                             x += 1

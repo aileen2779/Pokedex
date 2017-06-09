@@ -85,13 +85,6 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <searchBar contentMode="redraw" searchBarStyle="minimal" placeholder="Search a Shifter" translatesAutoresizingMaskIntoConstraints="NO" id="Kg2-FC-9f0">
-                                <rect key="frame" x="0.0" y="65" width="375" height="44"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="44" id="Qwd-pd-row"/>
-                                </constraints>
-                                <textInputTraits key="textInputTraits"/>
-                            </searchBar>
                             <imageView userInteractionEnabled="NO" alpha="0.29999999999999999" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Depositphotos_1265275_original" translatesAutoresizingMaskIntoConstraints="NO" id="aFm-NQ-7zw" userLabel="bg">
                                 <rect key="frame" x="0.0" y="109" width="375" height="558"/>
                             </imageView>
@@ -164,6 +157,13 @@
                                     </collectionViewCell>
                                 </cells>
                             </collectionView>
+                            <searchBar contentMode="redraw" misplaced="YES" searchBarStyle="minimal" placeholder="Search a Shifter" translatesAutoresizingMaskIntoConstraints="NO" id="Kg2-FC-9f0">
+                                <rect key="frame" x="10" y="65" width="375" height="44"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="44" id="Qwd-pd-row"/>
+                                </constraints>
+                                <textInputTraits key="textInputTraits"/>
+                            </searchBar>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
