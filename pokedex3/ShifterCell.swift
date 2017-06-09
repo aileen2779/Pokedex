@@ -26,9 +26,11 @@ class PokeCell: UICollectionViewCell {
         
         self.shifter = shifter
         
-        nameLbl.text = self.shifter.name.capitalized
-        thumbImg.image = UIImage(named: "\(self.shifter.userId)")
-        if (self.shifter.membership == "None" ) {
+        nameLbl.text = shifter.name.capitalized
+        thumbImg.image = UIImage(named: "\(shifter.userId)")
+      
+        // Change the color of the background label is member has not paid yet
+        if (shifter.membership == "None" ) {
             nameLbl.backgroundColor = UIColor(red:0.50, green:0.50, blue:0.50, alpha:1.0)
         } else {
             nameLbl.backgroundColor  = UIColor(red:0.56, green:0.00, blue:0.13, alpha:1.0)

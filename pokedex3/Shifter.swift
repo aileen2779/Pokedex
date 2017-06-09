@@ -4,7 +4,7 @@
 
 
 import Foundation
-import Alamofire
+//import Alamofire
 
 class ShifterClass {
     

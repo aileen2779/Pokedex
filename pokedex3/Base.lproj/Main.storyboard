@@ -15,10 +15,10 @@
         </array>
     </customFonts>
     <scenes>
-        <!--View Controller-->
+        <!--Main Controller-->
         <scene sceneID="SSQ-3Q-MEJ">
             <objects>
-                <viewController id="oZz-Kd-dau" sceneMemberID="viewController">
+                <viewController id="oZz-Kd-dau" customClass="MainController" customModule="_02Shifters" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="hra-aY-ZcQ"/>
                         <viewControllerLayoutGuide type="bottom" id="cKk-Pl-zqF"/>
@@ -28,17 +28,19 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="nHU-QA-DSq">
-                                <rect key="frame" x="158" y="318" width="60" height="30"/>
+                                <rect key="frame" x="158" y="316.5" width="60" height="33"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="60" id="w3F-iP-vmI"/>
                                 </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <state key="normal" title="Log In"/>
                                 <connections>
+                                    <action selector="loginButtonTapped:" destination="oZz-Kd-dau" eventType="touchUpInside" id="Fj8-U3-u1d"/>
                                     <segue destination="BYZ-38-t0r" kind="show" id="OUm-51-fde"/>
                                 </connections>
                             </button>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Shifter ID" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="V8r-37-Xj4" customClass="CustomTextField" customModule="_02Shifters" customModuleProvider="target">
-                                <rect key="frame" x="87.5" y="242" width="200" height="30"/>
+                                <rect key="frame" x="87.5" y="240.5" width="200" height="30"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="30" id="BOx-EX-los"/>
                                     <constraint firstAttribute="width" constant="200" id="gyb-zt-dk7"/>
@@ -48,14 +50,14 @@
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Password" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="8nL-iL-hvw" customClass="CustomTextField" customModule="_02Shifters" customModuleProvider="target">
-                                <rect key="frame" x="87.5" y="280" width="200" height="30"/>
+                                <rect key="frame" x="87.5" y="278.5" width="200" height="30"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="200" id="XMv-ID-xxP"/>
                                     <constraint firstAttribute="height" constant="30" id="osZ-aZ-jxO"/>
                                 </constraints>
                                 <nil key="textColor"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits"/>
+                                <textInputTraits key="textInputTraits" secureTextEntry="YES"/>
                             </textField>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -68,6 +70,10 @@
                             <constraint firstItem="8nL-iL-hvw" firstAttribute="top" secondItem="V8r-37-Xj4" secondAttribute="bottom" constant="8" id="lBa-5N-BRh"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="loginTextField" destination="V8r-37-Xj4" id="ntZ-C4-DmR"/>
+                        <outlet property="passwordTextField" destination="8nL-iL-hvw" id="cdI-dX-uAE"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ehb-Hj-kzc" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
