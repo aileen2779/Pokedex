@@ -39,7 +39,7 @@ class ViewController: UIViewController, UICollectionViewDelegate, UICollectionVi
         
         // pull to refresh routune
         self.refreshControl = UIRefreshControl()
-        self.refreshControl.attributedTitle = NSAttributedString(string: "Pull to refresh")
+        self.refreshControl.attributedTitle = NSAttributedString(string: "")
         self.refreshControl.addTarget(self, action: #selector(refresh), for: UIControlEvents.valueChanged)
         collection!.addSubview(refreshControl)
 
