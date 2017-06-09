@@ -31,9 +31,6 @@ class ViewController: UIViewController, UICollectionViewDelegate, UICollectionVi
         
         searchBar.returnKeyType = UIReturnKeyType.done
         
-        
-     
-        
         callJSONURL(jsonUrl: searchURL!)
         
         

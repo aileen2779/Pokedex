@@ -36,7 +36,6 @@
                                 <state key="normal" title="Log In"/>
                                 <connections>
                                     <action selector="loginButtonTapped:" destination="oZz-Kd-dau" eventType="touchUpInside" id="Fj8-U3-u1d"/>
-                                    <segue destination="BYZ-38-t0r" kind="show" id="OUm-51-fde"/>
                                 </connections>
                             </button>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Shifter ID" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="V8r-37-Xj4" customClass="CustomTextField" customModule="_02Shifters" customModuleProvider="target">
@@ -73,6 +72,7 @@
                     <connections>
                         <outlet property="loginTextField" destination="V8r-37-Xj4" id="ntZ-C4-DmR"/>
                         <outlet property="passwordTextField" destination="8nL-iL-hvw" id="cdI-dX-uAE"/>
+                        <segue destination="BYZ-38-t0r" kind="showDetail" identifier="ShifterPokedexVC" id="AS8-3Q-Iyf"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ehb-Hj-kzc" userLabel="First Responder" sceneMemberID="firstResponder"/>
