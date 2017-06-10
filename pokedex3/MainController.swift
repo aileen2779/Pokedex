@@ -10,6 +10,7 @@ import UIKit
 
 class MainController: UIViewController, UITextFieldDelegate {
 
+    @IBOutlet weak var splashLogo: UIImageView!
     
     
     let url  = "http://www.702shifters.com/ios_auth.php"
@@ -184,7 +185,8 @@ class MainController: UIViewController, UITextFieldDelegate {
         loginTextField.isHidden = false
         passwordTextField.isHidden = false
         login_button.isHidden = false
-
+        splashLogo.isHidden = true
+        
         loginTextField.isEnabled = true
         passwordTextField.isEnabled = true
         login_button.isEnabled = true
