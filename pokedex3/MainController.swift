@@ -80,7 +80,8 @@ class MainController: UIViewController, UITextFieldDelegate {
     }
     
     
-    func 	displayMyAlertMessage() {
+    // function without arguments that are run from async
+    func displayMyAlertMessage() {
         let myAlert =  UIAlertController(title:"Alert", message: "Invalid username or password", preferredStyle: UIAlertControllerStyle.alert)
         
         let okAction = UIAlertAction(title:"Ok", style: UIAlertActionStyle.default, handler: nil)
