@@ -181,9 +181,12 @@ class MainController: UIViewController, UITextFieldDelegate {
     
     func LoginToDo()
     {
+        loginTextField.isHidden = false
+        passwordTextField.isHidden = false
+        login_button.isHidden = false
+
         loginTextField.isEnabled = true
         passwordTextField.isEnabled = true
-        
         login_button.isEnabled = true
         
         
@@ -193,6 +196,10 @@ class MainController: UIViewController, UITextFieldDelegate {
     
     func check_session()
     {
+        loginTextField.isHidden = true
+        passwordTextField.isHidden = true
+        login_button.isHidden = true
+
         let post_data: NSDictionary = NSMutableDictionary()
         
         

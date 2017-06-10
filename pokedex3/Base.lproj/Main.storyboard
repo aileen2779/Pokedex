@@ -27,7 +27,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="nHU-QA-DSq">
+                            <button hidden="YES" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="nHU-QA-DSq">
                                 <rect key="frame" x="158" y="315" width="60" height="36"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="60" id="w3F-iP-vmI"/>
@@ -38,7 +38,7 @@
                                     <action selector="loginButtonTapped:" destination="oZz-Kd-dau" eventType="touchUpInside" id="Fj8-U3-u1d"/>
                                 </connections>
                             </button>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Shifter ID" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="V8r-37-Xj4" customClass="CustomTextField" customModule="_02Shifters" customModuleProvider="target">
+                            <textField hidden="YES" opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Shifter ID" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="V8r-37-Xj4" customClass="CustomTextField" customModule="_02Shifters" customModuleProvider="target">
                                 <rect key="frame" x="62.5" y="219" width="250" height="40"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="40" id="BOx-EX-los"/>
@@ -48,8 +48,8 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Password" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="8nL-iL-hvw" customClass="CustomTextField" customModule="_02Shifters" customModuleProvider="target">
-                                <rect key="frame" x="62.5" y="267" width="250" height="40"/>
+                            <textField hidden="YES" opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Password" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="8nL-iL-hvw" customClass="CustomTextField" customModule="_02Shifters" customModuleProvider="target">
+                                <rect key="frame" x="62" y="267" width="250" height="40"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="250" id="XMv-ID-xxP"/>
                                     <constraint firstAttribute="height" constant="40" id="osZ-aZ-jxO"/>
