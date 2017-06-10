@@ -32,10 +32,7 @@ class MainController: UIViewController, UITextFieldDelegate {
         
         // Check for empty fields
         if (userEmail.isEmpty) {
-            
-            UIView.animate(withDuration: 0.1, delay: 0.0, usingSpringWithDamping: 1, initialSpringVelocity: 0, options: .curveEaseIn, animations: {self.loginTextField.center.x += 10 }, completion: nil)
-            UIView.animate(withDuration: 0.1, delay: 0.1, usingSpringWithDamping: 1, initialSpringVelocity: 0, options: .curveEaseIn, animations: {self.loginTextField.center.x -= 20 }, completion: nil)
-            UIView.animate(withDuration: 0.1, delay: 0.2, usingSpringWithDamping: 1, initialSpringVelocity: 0, options: .curveEaseIn, animations: {self.loginTextField.center.x += 10 }, completion: nil)
+            animateMe(textField: self.loginTextField)
             
             login_button.isEnabled = true
             return
@@ -43,10 +40,7 @@ class MainController: UIViewController, UITextFieldDelegate {
         
         if (userPassword.isEmpty) {
 
-            UIView.animate(withDuration: 0.1, delay: 0.0, usingSpringWithDamping: 1, initialSpringVelocity: 0, options: .curveEaseIn, animations: {self.passwordTextField.center.x += 10 }, completion: nil)
-            UIView.animate(withDuration: 0.1, delay: 0.1, usingSpringWithDamping: 1, initialSpringVelocity: 0, options: .curveEaseIn, animations: {self.passwordTextField.center.x -= 20 }, completion: nil)
-            UIView.animate(withDuration: 0.1, delay: 0.2, usingSpringWithDamping: 1, initialSpringVelocity: 0, options: .curveEaseIn, animations: {self.passwordTextField.center.x += 10 }, completion: nil)
-            
+            animateMe(textField: self.passwordTextField)
             login_button.isEnabled = true
             return
         }
@@ -154,6 +148,16 @@ class MainController: UIViewController, UITextFieldDelegate {
         // Enable login button before segue
         login_button.isEnabled = true
   
+    }
+    
+    
+    func animateMe(textField: UITextField) {
+        
+        let _thisTextField = textField
+
+        UIView.animate(withDuration: 0.1, delay: 0.0, usingSpringWithDamping: 1, initialSpringVelocity: 0, options: .curveEaseIn, animations: {_thisTextField.center.x += 10 }, completion: nil)
+        UIView.animate(withDuration: 0.1, delay: 0.1, usingSpringWithDamping: 1, initialSpringVelocity: 0, options: .curveEaseIn, animations: {_thisTextField.center.x -= 20 }, completion: nil)
+        UIView.animate(withDuration: 0.1, delay: 0.2, usingSpringWithDamping: 1, initialSpringVelocity: 0, options: .curveEaseIn, animations: {_thisTextField.center.x += 10 }, completion: nil)
     }
     
     func LoginToDo() {
