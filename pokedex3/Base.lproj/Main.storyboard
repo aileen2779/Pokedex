@@ -28,31 +28,31 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="nHU-QA-DSq">
-                                <rect key="frame" x="158" y="316.5" width="60" height="33"/>
+                                <rect key="frame" x="158" y="315" width="60" height="36"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="60" id="w3F-iP-vmI"/>
                                 </constraints>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <state key="normal" title="Log In"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                <state key="normal" title="Login"/>
                                 <connections>
                                     <action selector="loginButtonTapped:" destination="oZz-Kd-dau" eventType="touchUpInside" id="Fj8-U3-u1d"/>
                                 </connections>
                             </button>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Shifter ID" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="V8r-37-Xj4" customClass="CustomTextField" customModule="_02Shifters" customModuleProvider="target">
-                                <rect key="frame" x="87.5" y="240.5" width="200" height="30"/>
+                                <rect key="frame" x="62.5" y="219" width="250" height="40"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="30" id="BOx-EX-los"/>
-                                    <constraint firstAttribute="width" constant="200" id="gyb-zt-dk7"/>
+                                    <constraint firstAttribute="height" constant="40" id="BOx-EX-los"/>
+                                    <constraint firstAttribute="width" constant="250" id="gyb-zt-dk7"/>
                                 </constraints>
                                 <nil key="textColor"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Password" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="8nL-iL-hvw" customClass="CustomTextField" customModule="_02Shifters" customModuleProvider="target">
-                                <rect key="frame" x="87.5" y="278.5" width="200" height="30"/>
+                                <rect key="frame" x="62.5" y="267" width="250" height="40"/>
                                 <constraints>
-                                    <constraint firstAttribute="width" constant="200" id="XMv-ID-xxP"/>
-                                    <constraint firstAttribute="height" constant="30" id="osZ-aZ-jxO"/>
+                                    <constraint firstAttribute="width" constant="250" id="XMv-ID-xxP"/>
+                                    <constraint firstAttribute="height" constant="40" id="osZ-aZ-jxO"/>
                                 </constraints>
                                 <nil key="textColor"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
@@ -71,6 +71,7 @@
                     </view>
                     <connections>
                         <outlet property="loginTextField" destination="V8r-37-Xj4" id="ntZ-C4-DmR"/>
+                        <outlet property="login_button" destination="nHU-QA-DSq" id="IAC-hn-Fi7"/>
                         <outlet property="passwordTextField" destination="8nL-iL-hvw" id="cdI-dX-uAE"/>
                         <segue destination="BYZ-38-t0r" kind="showDetail" identifier="ShifterPokedexVC" id="AS8-3Q-Iyf"/>
                     </connections>
