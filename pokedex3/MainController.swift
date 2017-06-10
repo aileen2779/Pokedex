@@ -11,62 +11,47 @@ import UIKit
 class MainController: UIViewController, UITextFieldDelegate {
 
     @IBOutlet weak var splashLogo: UIImageView!
-    
-    
-    let url  = "http://www.702shifters.com/ios_auth.php"
-    
-    //@IBOutlet weak var username_input: UITextField!
-    //@IBOutlet weak var password_input: UITextField!
-    //@IBOutlet weak var login_button: UIButton!
-    
     @IBOutlet weak var login_button: UIButton!
-    
-    var login_session:String = ""
-    
     @IBOutlet weak var loginTextField: CustomTextField!
     @IBOutlet weak var passwordTextField: CustomTextField!
 
-    var searchURL = URL(string: "http://www.702shifters.com?user=gamy&pass=gamy666")
+    
+    let url  = "http://www.702shifters.com/ios_auth.php"
+    
+    var login_session:String = ""
+    
     
     @IBAction func loginButtonTapped(_ sender: Any) {
         
+        // disable login button to prevent launching segue twice
+        login_button.isEnabled = false
+        
+        // evaluate login and password
         let userEmail = loginTextField.text!
         let userPassword = passwordTextField.text!
+        
         // Check for empty fields
         if (userEmail.isEmpty) {
             
             UIView.animate(withDuration: 0.1, delay: 0.0, usingSpringWithDamping: 1, initialSpringVelocity: 0, options: .curveEaseIn, animations: {self.loginTextField.center.x += 10 }, completion: nil)
-            
             UIView.animate(withDuration: 0.1, delay: 0.1, usingSpringWithDamping: 1, initialSpringVelocity: 0, options: .curveEaseIn, animations: {self.loginTextField.center.x -= 20 }, completion: nil)
-            
             UIView.animate(withDuration: 0.1, delay: 0.2, usingSpringWithDamping: 1, initialSpringVelocity: 0, options: .curveEaseIn, animations: {self.loginTextField.center.x += 10 }, completion: nil)
             
+            login_button.isEnabled = true
             return
         }
         
         if (userPassword.isEmpty) {
 
             UIView.animate(withDuration: 0.1, delay: 0.0, usingSpringWithDamping: 1, initialSpringVelocity: 0, options: .curveEaseIn, animations: {self.passwordTextField.center.x += 10 }, completion: nil)
-            
             UIView.animate(withDuration: 0.1, delay: 0.1, usingSpringWithDamping: 1, initialSpringVelocity: 0, options: .curveEaseIn, animations: {self.passwordTextField.center.x -= 20 }, completion: nil)
-            
             UIView.animate(withDuration: 0.1, delay: 0.2, usingSpringWithDamping: 1, initialSpringVelocity: 0, options: .curveEaseIn, animations: {self.passwordTextField.center.x += 10 }, completion: nil)
             
+            login_button.isEnabled = true
             return
         }
         
-        //if (wpAuthenticate(loginTextField, passwordTextField)){
-         //   self.performSegue(withIdentifier: "ShifterPokedexVC", sender: self)
-       // }
-        
-        if(login_button.titleLabel?.text == "Logout") {
-            let preferences = UserDefaults.standard
-            preferences.removeObject(forKey: "session")
-            
-            LoginToDo()
-        } else {
-            login_now(username:loginTextField.text!, password: passwordTextField.text!)
-        }
+        login_now(username:loginTextField.text!, password: passwordTextField.text!)
         
     }
     
@@ -77,6 +62,7 @@ class MainController: UIViewController, UITextFieldDelegate {
         self.loginTextField.delegate = self
         self.passwordTextField.delegate = self
         
+        // redirect if logged in or not
         let preferences = UserDefaults.standard
         if preferences.object(forKey: "session") != nil {
             login_session   = preferences.object(forKey: "session") as! String
@@ -85,7 +71,6 @@ class MainController: UIViewController, UITextFieldDelegate {
         } else {
             LoginToDo()
         }
-        
         
     }
 
@@ -98,8 +83,6 @@ class MainController: UIViewController, UITextFieldDelegate {
         view.endEditing(true)
         super.touchesBegan(touches, with: event)
     }
-
-
 
     
     func login_now(username:String, password:String) {
@@ -145,11 +128,9 @@ class MainController: UIViewController, UITextFieldDelegate {
             guard let server_response = json as? NSDictionary else {
                 return
             }
-            print("login \(server_response)");
             
             if let data_block = server_response["data"] as? NSDictionary {
-                if let session_data = data_block["session"] as? String
-                {
+                if let session_data = data_block["session"] as? String {
                     self.login_session = session_data
                     
                     let preferences = UserDefaults.standard
@@ -165,23 +146,17 @@ class MainController: UIViewController, UITextFieldDelegate {
         
         
     }
-    
-    
+
     
     func LoginDone() {
-        //loginTextField.isEnabled = false
-        //passwordTextField.isEnabled = false
-        
-        //login_button.isEnabled = true
-        
-        
-        //login_button.setTitle("Logout", for: .normal)
-        
         self.performSegue(withIdentifier: "ShifterPokedexVC", sender: self)
+        
+        // Enable login button before segue
+        login_button.isEnabled = true
+  
     }
     
-    func LoginToDo()
-    {
+    func LoginToDo() {
         loginTextField.isHidden = false
         passwordTextField.isHidden = false
         login_button.isHidden = false
@@ -192,18 +167,16 @@ class MainController: UIViewController, UITextFieldDelegate {
         login_button.isEnabled = true
         
         
-        login_button.setTitle("Login", for: .normal)
+        //login_button.setTitle("Login", for: .normal)
     }
     
     
-    func check_session()
-    {
+    func check_session() {
         loginTextField.isHidden = true
         passwordTextField.isHidden = true
         login_button.isHidden = true
-
-        let post_data: NSDictionary = NSMutableDictionary()
         
+        let post_data: NSDictionary = NSMutableDictionary()
         
         post_data.setValue(login_session, forKey: "session")
         
@@ -216,13 +189,10 @@ class MainController: UIViewController, UITextFieldDelegate {
         
         var paramString = ""
         
-        
-        for (key, value) in post_data
-        {
+        for (key, value) in post_data {
             paramString = paramString + (key as! String) + "=" + (value as! String) + "&"
         }
         
-        print(paramString)
         request.httpBody = paramString.data(using: String.Encoding.utf8)
         
         let task = session.dataTask(with: request as URLRequest, completionHandler: {

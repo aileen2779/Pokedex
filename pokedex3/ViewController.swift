@@ -6,9 +6,16 @@
 
 import UIKit
 import AVFoundation
-import Alamofire
+//import Alamofire
 
 class ViewController: UIViewController, UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout, UISearchBarDelegate {
+    
+    
+    @IBAction func logoutButtonTapped(_ sender: Any) {
+        let preferences = UserDefaults.standard
+        preferences.removeObject(forKey: "session")
+        dismiss(animated: true, completion: nil)
+    }
     
     @IBOutlet weak var collection: UICollectionView!
     @IBOutlet weak var searchBar: UISearchBar!

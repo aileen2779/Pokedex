@@ -19,7 +19,7 @@
 		F9A0270F1D43522300107657 /* Shifter.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9A0270E1D43522300107657 /* Shifter.swift */; };
 		F9B47AE41D45749D00F279FC /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9B47AE31D45749D00F279FC /* Constants.swift */; };
 		F9D0405D1D43D5BF00E52165 /* ShifterCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9D0405C1D43D5BF00E52165 /* ShifterCell.swift */; };
-		F9D040731D44625A00E52165 /* PokemonDetailVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9D040721D44625A00E52165 /* PokemonDetailVC.swift */; };
+		F9D040731D44625A00E52165 /* ShifterDetailVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9D040721D44625A00E52165 /* ShifterDetailVC.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -39,7 +39,7 @@
 		F9A0270E1D43522300107657 /* Shifter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Shifter.swift; sourceTree = "<group>"; };
 		F9B47AE31D45749D00F279FC /* Constants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		F9D0405C1D43D5BF00E52165 /* ShifterCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; indentWidth = 2; lastKnownFileType = sourcecode.swift; path = ShifterCell.swift; sourceTree = "<group>"; tabWidth = 2; };
-		F9D040721D44625A00E52165 /* PokemonDetailVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PokemonDetailVC.swift; sourceTree = "<group>"; };
+		F9D040721D44625A00E52165 /* ShifterDetailVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ShifterDetailVC.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -127,7 +127,7 @@
 			isa = PBXGroup;
 			children = (
 				F9439F151D4331BE00B4B214 /* ViewController.swift */,
-				F9D040721D44625A00E52165 /* PokemonDetailVC.swift */,
+				F9D040721D44625A00E52165 /* ShifterDetailVC.swift */,
 				7E2339D31EE71B6C0016AF23 /* MainController.swift */,
 			);
 			name = Controller;
@@ -283,7 +283,7 @@
 				F9439F161D4331BE00B4B214 /* ViewController.swift in Sources */,
 				F9439F141D4331BE00B4B214 /* AppDelegate.swift in Sources */,
 				7E1AF1AC1EEA1009005C7D41 /* CustomTextField.swift in Sources */,
-				F9D040731D44625A00E52165 /* PokemonDetailVC.swift in Sources */,
+				F9D040731D44625A00E52165 /* ShifterDetailVC.swift in Sources */,
 				F9B47AE41D45749D00F279FC /* Constants.swift in Sources */,
 				F9A0270F1D43522300107657 /* Shifter.swift in Sources */,
 			);

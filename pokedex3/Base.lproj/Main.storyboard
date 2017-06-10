@@ -38,7 +38,7 @@
                                     <action selector="loginButtonTapped:" destination="oZz-Kd-dau" eventType="touchUpInside" id="Fj8-U3-u1d"/>
                                 </connections>
                             </button>
-                            <textField hidden="YES" opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Shifter ID" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="V8r-37-Xj4" customClass="CustomTextField" customModule="_02Shifters" customModuleProvider="target">
+                            <textField hidden="YES" opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Shifter ID" textAlignment="natural" clearsOnBeginEditing="YES" minimumFontSize="17" clearButtonMode="always" translatesAutoresizingMaskIntoConstraints="NO" id="V8r-37-Xj4" customClass="CustomTextField" customModule="_02Shifters" customModuleProvider="target">
                                 <rect key="frame" x="62.5" y="219" width="250" height="40"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="40" id="BOx-EX-los"/>
@@ -47,16 +47,6 @@
                                 <nil key="textColor"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
-                            </textField>
-                            <textField hidden="YES" opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Password" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="8nL-iL-hvw" customClass="CustomTextField" customModule="_02Shifters" customModuleProvider="target">
-                                <rect key="frame" x="62" y="267" width="250" height="40"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="250" id="XMv-ID-xxP"/>
-                                    <constraint firstAttribute="height" constant="40" id="osZ-aZ-jxO"/>
-                                </constraints>
-                                <nil key="textColor"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits" secureTextEntry="YES"/>
                             </textField>
                             <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="702Logo" translatesAutoresizingMaskIntoConstraints="NO" id="nfq-6s-lmI">
                                 <rect key="frame" x="106" y="290" width="162" height="86"/>
@@ -67,6 +57,16 @@
                                     <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="162" id="eKe-5u-FNQ"/>
                                 </constraints>
                             </imageView>
+                            <textField hidden="YES" opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Password" textAlignment="natural" clearsOnBeginEditing="YES" minimumFontSize="17" clearButtonMode="always" translatesAutoresizingMaskIntoConstraints="NO" id="8nL-iL-hvw" customClass="CustomTextField" customModule="_02Shifters" customModuleProvider="target">
+                                <rect key="frame" x="62" y="267" width="250" height="40"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="250" id="XMv-ID-xxP"/>
+                                    <constraint firstAttribute="height" constant="40" id="osZ-aZ-jxO"/>
+                                </constraints>
+                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" secureTextEntry="YES"/>
+                            </textField>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
@@ -117,12 +117,24 @@
                                             <constraint firstAttribute="width" constant="173" id="zKa-hg-0Az"/>
                                         </constraints>
                                     </imageView>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="rCp-nk-P7G">
+                                        <rect key="frame" x="120.5" y="23" width="134" height="30"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="134" id="2F2-SH-260"/>
+                                            <constraint firstAttribute="height" constant="30" id="HMk-v9-1NZ"/>
+                                        </constraints>
+                                        <connections>
+                                            <action selector="logoutButtonTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="7BS-iX-1L7"/>
+                                        </connections>
+                                    </button>
                                 </subviews>
                                 <color key="backgroundColor" red="0.5568627451" green="0.0" blue="0.12941176469999999" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
                                     <constraint firstItem="5YW-iw-Ouk" firstAttribute="centerX" secondItem="yQ1-lj-1YP" secondAttribute="centerX" id="3OY-sd-nm0"/>
                                     <constraint firstAttribute="height" constant="65" id="3Zn-Rg-igb"/>
                                     <constraint firstItem="5YW-iw-Ouk" firstAttribute="top" secondItem="yQ1-lj-1YP" secondAttribute="top" constant="15" id="HuR-Zy-xTp"/>
+                                    <constraint firstItem="rCp-nk-P7G" firstAttribute="centerX" secondItem="yQ1-lj-1YP" secondAttribute="centerX" id="LlU-f5-X6a"/>
+                                    <constraint firstItem="rCp-nk-P7G" firstAttribute="top" secondItem="yQ1-lj-1YP" secondAttribute="top" constant="23" id="V6F-KS-89W"/>
                                 </constraints>
                             </view>
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="ROp-0H-xLa" userLabel="CellCollection">
@@ -210,7 +222,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="137" y="278"/>
+            <point key="canvasLocation" x="136.80000000000001" y="277.51124437781112"/>
         </scene>
         <!--Pokemon DetailVC-->
         <scene sceneID="ucW-qL-O3l">
