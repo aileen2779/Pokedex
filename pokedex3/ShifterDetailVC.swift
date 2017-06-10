@@ -11,7 +11,6 @@ import UIKit
 class PokemonDetailVC: UIViewController {
     
     var shifter: ShifterClass!
-    
 
     @IBOutlet weak var nameLbl: UILabel!
     @IBOutlet weak var mainImg: UIImageView!

@@ -31,13 +31,11 @@ class MainController: UIViewController, UITextFieldDelegate {
         // Check for empty fields
         if (userEmail.isEmpty) {
             animateMe(textField: self.loginTextField)
-            
             login_button.isEnabled = true
             return
         }
         
         if (userPassword.isEmpty) {
-
             animateMe(textField: self.passwordTextField)
             login_button.isEnabled = true
             return
@@ -57,6 +55,7 @@ class MainController: UIViewController, UITextFieldDelegate {
     }
     
     override func viewDidLoad() {
+        
         super.viewDidLoad()
 
         //Init routine to hide keyboard
@@ -80,6 +79,17 @@ class MainController: UIViewController, UITextFieldDelegate {
         // Dispose of any resources that can be recreated.
     }
     
+    
+    func 	displayMyAlertMessage() {
+        let myAlert =  UIAlertController(title:"Alert", message: "Invalid username or password", preferredStyle: UIAlertControllerStyle.alert)
+        
+        let okAction = UIAlertAction(title:"Ok", style: UIAlertActionStyle.default, handler: nil)
+        myAlert.addAction(okAction)
+        
+        self.present(myAlert, animated: true, completion: nil)
+    }
+    
+    // Dismiss the keyboard when not editing
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
         view.endEditing(true)
         super.touchesBegan(touches, with: event)
@@ -128,6 +138,9 @@ class MainController: UIViewController, UITextFieldDelegate {
                 return
             }
             
+           //print(server_response)
+            
+            // If data_block is empty, session id would be missing
             if let data_block = server_response["data"] as? NSDictionary {
                 if let session_data = data_block["session"] as? String {
                     self.login_session = session_data
@@ -137,6 +150,11 @@ class MainController: UIViewController, UITextFieldDelegate {
                     
                     DispatchQueue.main.async(execute: self.loginDone)
                 }
+            } else {
+                
+                // Display alert message and enable login button
+                DispatchQueue.main.async(execute: self.displayMyAlertMessage)
+                self.login_button.isEnabled = true
             }
             
         })
@@ -227,7 +245,6 @@ class MainController: UIViewController, UITextFieldDelegate {
             if let response_code = server_response["response_code"] as? Int  {
                 if(response_code == 200) {
                     DispatchQueue.main.async(execute: self.loginDone)
-                    
                 } else {
                     DispatchQueue.main.async(execute: self.loginToDo)
                 }

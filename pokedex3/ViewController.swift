@@ -10,7 +10,6 @@ import AVFoundation
 
 class ViewController: UIViewController, UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout, UISearchBarDelegate {
     
-    
     @IBAction func logoutButtonTapped(_ sender: Any) {
         let preferences = UserDefaults.standard
         preferences.removeObject(forKey: "session")
