@@ -19,4 +19,6 @@ let URLToken = ("http://www.702shifters.com/json_service.php?token=\(someString)
 let URL_BASE = URL(string: URLToken)
 //let URL_POKEMON = "/api/v1/pokemon/"
 
+let URL_AUTH  = "http://www.702shifters.com/ios_auth.php"
+
 typealias DownloadComplete = () -> ()

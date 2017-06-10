@@ -15,11 +15,9 @@ class MainController: UIViewController, UITextFieldDelegate {
     @IBOutlet weak var loginTextField: CustomTextField!
     @IBOutlet weak var passwordTextField: CustomTextField!
 
-    
-    let url  = "http://www.702shifters.com/ios_auth.php"
+    let url  = URL_AUTH
     
     var login_session:String = ""
-    
     
     @IBAction func loginButtonTapped(_ sender: Any) {
         
@@ -49,6 +47,15 @@ class MainController: UIViewController, UITextFieldDelegate {
         
     }
     
+    override func viewDidAppear(_ animated: Bool) {
+        // check if already logged in after logged out
+        // if not logged in, show login and password prompt
+        let preferences = UserDefaults.standard
+        if preferences.object(forKey: "session") == nil {
+            loginToDo()
+        }
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -63,7 +70,7 @@ class MainController: UIViewController, UITextFieldDelegate {
             check_session()
         
         } else {
-            LoginToDo()
+            loginToDo()
         }
         
     }
@@ -82,7 +89,6 @@ class MainController: UIViewController, UITextFieldDelegate {
     func login_now(username:String, password:String) {
         let post_data: NSDictionary = NSMutableDictionary()
         
-        
         post_data.setValue(username, forKey: "username")
         post_data.setValue(password, forKey: "password")
         
@@ -94,7 +100,6 @@ class MainController: UIViewController, UITextFieldDelegate {
         request.cachePolicy = NSURLRequest.CachePolicy.reloadIgnoringCacheData
         
         var paramString = ""
-        
         
         for (key, value) in post_data {
             paramString = paramString + (key as! String) + "=" + (value as! String) + "&"
@@ -130,7 +135,7 @@ class MainController: UIViewController, UITextFieldDelegate {
                     let preferences = UserDefaults.standard
                     preferences.set(session_data, forKey: "session")
                     
-                    DispatchQueue.main.async(execute: self.LoginDone)
+                    DispatchQueue.main.async(execute: self.loginDone)
                 }
             }
             
@@ -142,7 +147,7 @@ class MainController: UIViewController, UITextFieldDelegate {
     }
 
     
-    func LoginDone() {
+    func loginDone() {
         self.performSegue(withIdentifier: "ShifterPokedexVC", sender: self)
         
         // Enable login button before segue
@@ -160,18 +165,15 @@ class MainController: UIViewController, UITextFieldDelegate {
         UIView.animate(withDuration: 0.1, delay: 0.2, usingSpringWithDamping: 1, initialSpringVelocity: 0, options: .curveEaseIn, animations: {_thisTextField.center.x += 10 }, completion: nil)
     }
     
-    func LoginToDo() {
+    func loginToDo() {
+        splashLogo.isHidden = true
         loginTextField.isHidden = false
         passwordTextField.isHidden = false
         login_button.isHidden = false
-        splashLogo.isHidden = true
         
         loginTextField.isEnabled = true
         passwordTextField.isEnabled = true
         login_button.isEnabled = true
-        
-        
-        //login_button.setTitle("Login", for: .normal)
     }
     
     
@@ -204,7 +206,6 @@ class MainController: UIViewController, UITextFieldDelegate {
             data, response, error) in
             
             guard let _:Data = data, let _:URLResponse = response  , error == nil else {
-                
                 return
             }
             
@@ -225,10 +226,10 @@ class MainController: UIViewController, UITextFieldDelegate {
             
             if let response_code = server_response["response_code"] as? Int  {
                 if(response_code == 200) {
-                    DispatchQueue.main.async(execute: self.LoginDone)
+                    DispatchQueue.main.async(execute: self.loginDone)
                     
                 } else {
-                    DispatchQueue.main.async(execute: self.LoginToDo)
+                    DispatchQueue.main.async(execute: self.loginToDo)
                 }
             }
         })
