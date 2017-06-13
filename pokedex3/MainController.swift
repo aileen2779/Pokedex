@@ -21,20 +21,15 @@ class MainController: UIViewController, UITextFieldDelegate {
     
     @IBOutlet weak var thumbIdImage: UIImageView!
     @IBOutlet weak var thumbIdButton: UIButton!
-   
+    
+    @IBOutlet weak var activityIndicator: UIActivityIndicatorView!
+    
     let url  = URL_AUTH
     
     var login_session:String = ""
     
     @IBAction func loginButtonTapped(_ sender: Any) {
         
-        // hide login and thumb id buttons
-        loginStackView.isHidden = true
-        thumbIdImage.isHidden = true
-        thumbIdButton.isHidden = true
-        
-        // disable login button to prevent launching segue twice
-        login_button.isEnabled = false
  
         // dismiss the keyboard
         self.view.endEditing(true)
@@ -55,7 +50,17 @@ class MainController: UIViewController, UITextFieldDelegate {
             login_button.isEnabled = true
             return
         }
+
+        // hide login stack view and thumb id buttons
+        loginStackView.isHidden = true
+        thumbIdImage.isHidden = true
+        thumbIdButton.isHidden = true
+        // show activity activityIndicator
+        activityIndicator.startAnimating()
         
+        // disable login button to prevent performing segue twice
+        login_button.isEnabled = false
+
         login_now(username:loginTextField.text!, password: passwordTextField.text!)
         
     }
@@ -81,7 +86,8 @@ class MainController: UIViewController, UITextFieldDelegate {
         
         // hide the login stack view initially
         loginStackView.isHidden = true
-
+        activityIndicator.startAnimating()
+        
 
         //Init routine to hide keyboard
         self.loginTextField.delegate = self
@@ -92,7 +98,6 @@ class MainController: UIViewController, UITextFieldDelegate {
         if preferences.object(forKey: "session") != nil {
             login_session  = preferences.object(forKey: "session") as! String
             check_session()
-        
         } else {
             loginToDo()
 
@@ -212,6 +217,8 @@ class MainController: UIViewController, UITextFieldDelegate {
     }
     
     func loginToDo() {
+        activityIndicator.stopAnimating()
+        
         let preferences = UserDefaults.standard
         if preferences.object(forKey: "touchIdEnrolled") != nil {
             if ((preferences.object(forKey: "touchIdEnrolled")) != nil) {
@@ -223,17 +230,12 @@ class MainController: UIViewController, UITextFieldDelegate {
             }
         }
         loginStackView.isHidden = false
- 
+        login_button.isEnabled = true
 
     }
     
     
     func check_session() {
-        
-        //loginStackView.isHidden = true
-        //loginTextField.isHidden = true
-        //passwordTextField.isHidden = true
-        //login_button.isHidden = true
         
         let post_data: NSDictionary = NSMutableDictionary()
         
@@ -312,7 +314,6 @@ class MainController: UIViewController, UITextFieldDelegate {
                 //self.loginToDo()
             case LAError.Code.touchIDNotEnrolled.rawValue:
                 print("TouchID not enrolled")
-                
             case LAError.Code.passcodeNotSet.rawValue:
                 print("Passcode not set")
                 

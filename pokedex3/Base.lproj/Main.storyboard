@@ -27,6 +27,13 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
+                            <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" hidesWhenStopped="YES" animating="YES" style="gray" translatesAutoresizingMaskIntoConstraints="NO" id="vS3-yT-bSs">
+                                <rect key="frame" x="168" y="313" width="40" height="40"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="40" id="Wrs-nW-trz"/>
+                                    <constraint firstAttribute="height" constant="40" id="yIj-Zy-hWy"/>
+                                </constraints>
+                            </activityIndicatorView>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="fOi-xc-IYA" userLabel="LoginStackView">
                                 <rect key="frame" x="62" y="267" width="250" height="132"/>
                                 <subviews>
@@ -65,6 +72,13 @@
                                 </subviews>
                                 <color key="backgroundColor" red="0.50196081400000003" green="0.50196081400000003" blue="0.50196081400000003" alpha="1" colorSpace="calibratedRGB"/>
                             </stackView>
+                            <imageView hidden="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="touch-id-icon" translatesAutoresizingMaskIntoConstraints="NO" id="jQy-r4-9Ho">
+                                <rect key="frame" x="152.5" y="419" width="70" height="70"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="70" id="MGn-9D-Bax"/>
+                                    <constraint firstAttribute="width" constant="70" id="skX-aW-5gE"/>
+                                </constraints>
+                            </imageView>
                             <button hidden="YES" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="kIg-yR-t0x">
                                 <rect key="frame" x="148" y="419" width="80" height="80"/>
                                 <constraints>
@@ -75,13 +89,6 @@
                                     <action selector="touchIdButtonTapped:" destination="oZz-Kd-dau" eventType="touchUpInside" id="zhf-PE-uDo"/>
                                 </connections>
                             </button>
-                            <imageView hidden="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="touch-id-icon" translatesAutoresizingMaskIntoConstraints="NO" id="jQy-r4-9Ho">
-                                <rect key="frame" x="152.5" y="419" width="70" height="85"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="85" id="MGn-9D-Bax"/>
-                                    <constraint firstAttribute="width" constant="70" id="skX-aW-5gE"/>
-                                </constraints>
-                            </imageView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
@@ -91,11 +98,14 @@
                             <constraint firstItem="jQy-r4-9Ho" firstAttribute="top" secondItem="fOi-xc-IYA" secondAttribute="bottom" constant="26" id="L8m-Pc-Fy0"/>
                             <constraint firstItem="jQy-r4-9Ho" firstAttribute="top" secondItem="fOi-xc-IYA" secondAttribute="bottom" constant="20" id="bbV-VP-woJ"/>
                             <constraint firstItem="jQy-r4-9Ho" firstAttribute="centerX" secondItem="fLE-lc-Bi8" secondAttribute="centerX" id="cbm-Ga-OFn"/>
+                            <constraint firstItem="vS3-yT-bSs" firstAttribute="centerY" secondItem="fLE-lc-Bi8" secondAttribute="centerY" id="dKu-cP-Bh1"/>
+                            <constraint firstItem="vS3-yT-bSs" firstAttribute="centerX" secondItem="fLE-lc-Bi8" secondAttribute="centerX" id="evk-5s-Xbz"/>
                             <constraint firstItem="kIg-yR-t0x" firstAttribute="top" secondItem="fOi-xc-IYA" secondAttribute="bottom" constant="20" id="f3t-B9-6k5"/>
                             <constraint firstItem="kIg-yR-t0x" firstAttribute="centerX" secondItem="fLE-lc-Bi8" secondAttribute="centerX" id="nu9-do-ee1"/>
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="activityIndicator" destination="vS3-yT-bSs" id="cyb-eD-eKe"/>
                         <outlet property="loginStackView" destination="fOi-xc-IYA" id="qdz-XN-2xm"/>
                         <outlet property="loginTextField" destination="V8r-37-Xj4" id="ntZ-C4-DmR"/>
                         <outlet property="login_button" destination="nHU-QA-DSq" id="IAC-hn-Fi7"/>
