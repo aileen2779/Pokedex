@@ -54,12 +54,7 @@ class PokemonDetailVC: UIViewController {
         
         mainImg.image = img
 
-        //pokedexLbl.text = "\(pokemon.pokedexId)"
         self.updateUI()
-        
-        //pokemon.downloadPokemonDetail {
-        //    self.updateUI()
-        //}
         
     }
     

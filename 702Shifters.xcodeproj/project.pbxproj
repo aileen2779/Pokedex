@@ -10,6 +10,9 @@
 		7E1AF1AC1EEA1009005C7D41 /* CustomTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E1AF1AB1EEA1009005C7D41 /* CustomTextField.swift */; };
 		7E2339D41EE71B6C0016AF23 /* MainController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E2339D31EE71B6C0016AF23 /* MainController.swift */; };
 		7EC5D4D61EEF8D0E009B4977 /* LocalAuthentication.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7EC5D4D51EEF8D0E009B4977 /* LocalAuthentication.framework */; };
+		7EC5D4D81EEF9181009B4977 /* ios_auth.php in Resources */ = {isa = PBXBuildFile; fileRef = 7EC5D4D71EEF9181009B4977 /* ios_auth.php */; };
+		7EC5D4DE1EEF9376009B4977 /* TouchIDManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 7EC5D4DC1EEF9376009B4977 /* TouchIDManager.m */; };
+		7EC5D4DF1EEF9376009B4977 /* TouchIDManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7EC5D4DD1EEF9376009B4977 /* TouchIDManager.swift */; };
 		7EDDC6C91EDFD6320046333A /* json_service.php in Resources */ = {isa = PBXBuildFile; fileRef = 7EDDC6C81EDFD6320046333A /* json_service.php */; };
 		F9439F141D4331BE00B4B214 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9439F131D4331BE00B4B214 /* AppDelegate.swift */; };
 		F9439F161D4331BE00B4B214 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9439F151D4331BE00B4B214 /* ViewController.swift */; };
@@ -26,6 +29,12 @@
 		7E1AF1AB1EEA1009005C7D41 /* CustomTextField.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = CustomTextField.swift; path = ../../DreamLister/DreamLister/CustomTextField.swift; sourceTree = "<group>"; };
 		7E2339D31EE71B6C0016AF23 /* MainController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainController.swift; sourceTree = "<group>"; };
 		7EC5D4D51EEF8D0E009B4977 /* LocalAuthentication.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = LocalAuthentication.framework; path = System/Library/Frameworks/LocalAuthentication.framework; sourceTree = SDKROOT; };
+		7EC5D4D71EEF9181009B4977 /* ios_auth.php */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.script.php; path = ios_auth.php; sourceTree = "<group>"; };
+		7EC5D4D91EEF9375009B4977 /* 702Shifters-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "702Shifters-Bridging-Header.h"; sourceTree = "<group>"; };
+		7EC5D4DA1EEF9376009B4977 /* TouchIDBridging-Header.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "TouchIDBridging-Header.h"; path = "TouchIDResources/TouchIDBridging-Header.h"; sourceTree = "<group>"; };
+		7EC5D4DB1EEF9376009B4977 /* TouchIDManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = TouchIDManager.h; path = TouchIDResources/TouchIDManager.h; sourceTree = "<group>"; };
+		7EC5D4DC1EEF9376009B4977 /* TouchIDManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = TouchIDManager.m; path = TouchIDResources/TouchIDManager.m; sourceTree = "<group>"; };
+		7EC5D4DD1EEF9376009B4977 /* TouchIDManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = TouchIDManager.swift; path = TouchIDResources/TouchIDManager.swift; sourceTree = "<group>"; };
 		7EDDC6C81EDFD6320046333A /* json_service.php */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.script.php; name = json_service.php; path = ../../../../Downloads/json_service.php; sourceTree = "<group>"; };
 		850121C370D34FAEA05601A9 /* Pods-pokedex3.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-pokedex3.debug.xcconfig"; path = "Pods/Target Support Files/Pods-pokedex3/Pods-pokedex3.debug.xcconfig"; sourceTree = "<group>"; };
 		DAECE24C54B75D9A033B22B0 /* Pods-pokedex3.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-pokedex3.release.xcconfig"; path = "Pods/Target Support Files/Pods-pokedex3/Pods-pokedex3.release.xcconfig"; sourceTree = "<group>"; };
@@ -137,8 +146,14 @@
 		F9D0406A1D44347800E52165 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				7EC5D4DA1EEF9376009B4977 /* TouchIDBridging-Header.h */,
+				7EC5D4DB1EEF9376009B4977 /* TouchIDManager.h */,
+				7EC5D4DC1EEF9376009B4977 /* TouchIDManager.m */,
+				7EC5D4DD1EEF9376009B4977 /* TouchIDManager.swift */,
 				7E1AF1AB1EEA1009005C7D41 /* CustomTextField.swift */,
 				7EDDC6C81EDFD6320046333A /* json_service.php */,
+				7EC5D4D71EEF9181009B4977 /* ios_auth.php */,
+				7EC5D4D91EEF9375009B4977 /* 702Shifters-Bridging-Header.h */,
 			);
 			name = Resources;
 			sourceTree = "<group>";
@@ -188,7 +203,7 @@
 						CreatedOnToolsVersion = 8.0;
 						DevelopmentTeam = U47Q3369SJ;
 						DevelopmentTeamName = "Jonathan Burgoyne";
-						LastSwiftMigration = 0800;
+						LastSwiftMigration = 0830;
 						ProvisioningStyle = Automatic;
 					};
 				};
@@ -217,6 +232,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				F9439F1E1D4331BE00B4B214 /* LaunchScreen.storyboard in Resources */,
+				7EC5D4D81EEF9181009B4977 /* ios_auth.php in Resources */,
 				F9439F1B1D4331BE00B4B214 /* Assets.xcassets in Resources */,
 				F9439F191D4331BE00B4B214 /* Main.storyboard in Resources */,
 				7EDDC6C91EDFD6320046333A /* json_service.php in Resources */,
@@ -279,10 +295,12 @@
 			buildActionMask = 2147483647;
 			files = (
 				F9D0405D1D43D5BF00E52165 /* ShifterCell.swift in Sources */,
+				7EC5D4DE1EEF9376009B4977 /* TouchIDManager.m in Sources */,
 				7E2339D41EE71B6C0016AF23 /* MainController.swift in Sources */,
 				F9439F161D4331BE00B4B214 /* ViewController.swift in Sources */,
 				F9439F141D4331BE00B4B214 /* AppDelegate.swift in Sources */,
 				7E1AF1AC1EEA1009005C7D41 /* CustomTextField.swift in Sources */,
+				7EC5D4DF1EEF9376009B4977 /* TouchIDManager.swift in Sources */,
 				F9D040731D44625A00E52165 /* ShifterDetailVC.swift in Sources */,
 				F9B47AE41D45749D00F279FC /* Constants.swift in Sources */,
 				F9A0270F1D43522300107657 /* Shifter.swift in Sources */,
@@ -408,11 +426,14 @@
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				DEVELOPMENT_TEAM = U47Q3369SJ;
 				INFOPLIST_FILE = pokedex3/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.gamymalaarte.702shiftersAdmin;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "pokedex3/702Shifters-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 3.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -424,11 +445,13 @@
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				DEVELOPMENT_TEAM = U47Q3369SJ;
 				INFOPLIST_FILE = pokedex3/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.gamymalaarte.702shiftersAdmin;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "pokedex3/702Shifters-Bridging-Header.h";
 				SWIFT_VERSION = 3.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};

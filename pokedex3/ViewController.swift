@@ -6,7 +6,7 @@
 
 import UIKit
 import AVFoundation
-//import Alamofire
+
 
 class ViewController: UIViewController, UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout, UISearchBarDelegate {
     
@@ -57,15 +57,18 @@ class ViewController: UIViewController, UICollectionViewDelegate, UICollectionVi
         
         callJSONURL(jsonUrl: searchURL!)
         
-        
-        // pull to refresh routune
+        pullToRefresh()
+
+    }
+
+    func pullToRefresh() {
+        // pull to refresh routine
         self.refreshControl = UIRefreshControl()
         self.refreshControl.attributedTitle = NSAttributedString(string: "")
         self.refreshControl.addTarget(self, action: #selector(refresh), for: UIControlEvents.valueChanged)
         collection!.addSubview(refreshControl)
-
     }
-
+    
     func refresh(sender:AnyObject)
     {
         // Updating your data here...

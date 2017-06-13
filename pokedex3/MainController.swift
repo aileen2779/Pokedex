@@ -7,14 +7,20 @@
 //
 
 import UIKit
+import LocalAuthentication
 
 class MainController: UIViewController, UITextFieldDelegate {
 
-    @IBOutlet weak var splashLogo: UIImageView!
+
     @IBOutlet weak var login_button: UIButton!
     @IBOutlet weak var loginTextField: CustomTextField!
     @IBOutlet weak var passwordTextField: CustomTextField!
 
+    @IBOutlet weak var loginStackView: UIStackView!
+    
+    @IBOutlet weak var thumbIdImage: UIImageView!
+    @IBOutlet weak var thumbIdButton: UIButton!
+   
     let url  = URL_AUTH
     
     var login_session:String = ""
@@ -23,6 +29,9 @@ class MainController: UIViewController, UITextFieldDelegate {
         
         // disable login button to prevent launching segue twice
         login_button.isEnabled = false
+ 
+        // dismiss the keyboard
+        self.view.endEditing(true)
         
         // evaluate login and password
         let userEmail = loginTextField.text!
@@ -45,6 +54,12 @@ class MainController: UIViewController, UITextFieldDelegate {
         
     }
     
+    
+    @IBAction func touchIdButtonTapped(_ sender: Any) {
+        touchAuthenticateUser()
+    }
+    
+    
     override func viewDidAppear(_ animated: Bool) {
         // check if already logged in after logged out
         // if not logged in, show login and password prompt
@@ -57,6 +72,8 @@ class MainController: UIViewController, UITextFieldDelegate {
     override func viewDidLoad() {
         
         super.viewDidLoad()
+        loginStackView.isHidden = true
+
 
         //Init routine to hide keyboard
         self.loginTextField.delegate = self
@@ -70,6 +87,7 @@ class MainController: UIViewController, UITextFieldDelegate {
         
         } else {
             loginToDo()
+
         }
         
     }
@@ -123,7 +141,6 @@ class MainController: UIViewController, UITextFieldDelegate {
             data, response, error) in
             
             guard let _:Data = data, let _:URLResponse = response  , error == nil else {
-                
                 return
             }
             
@@ -148,6 +165,7 @@ class MainController: UIViewController, UITextFieldDelegate {
                     
                     let preferences = UserDefaults.standard
                     preferences.set(session_data, forKey: "session")
+                    preferences.set(true, forKey: "touchIdEnrolled")
                     
                     DispatchQueue.main.async(execute: self.loginDone)
                 }
@@ -185,21 +203,29 @@ class MainController: UIViewController, UITextFieldDelegate {
     }
     
     func loginToDo() {
-        splashLogo.isHidden = true
-        loginTextField.isHidden = false
-        passwordTextField.isHidden = false
-        login_button.isHidden = false
+        let preferences = UserDefaults.standard
+        if preferences.object(forKey: "touchIdEnrolled") != nil {
+            if ((preferences.object(forKey: "touchIdEnrolled")) != nil) {
+                thumbIdImage.isHidden = false
+                thumbIdButton.isHidden = false
+            } else {
+                thumbIdImage.isHidden = true
+                thumbIdButton.isHidden = true
+            }
+        }
+        loginStackView.isHidden = false
+
         
-        loginTextField.isEnabled = true
-        passwordTextField.isEnabled = true
-        login_button.isEnabled = true
+
     }
     
     
     func check_session() {
-        loginTextField.isHidden = true
-        passwordTextField.isHidden = true
-        login_button.isHidden = true
+        
+        //loginStackView.isHidden = true
+        //loginTextField.isHidden = true
+        //passwordTextField.isHidden = true
+        //login_button.isHidden = true
         
         let post_data: NSDictionary = NSMutableDictionary()
         
@@ -228,7 +254,6 @@ class MainController: UIViewController, UITextFieldDelegate {
                 return
             }
             
-            
             let json: Any?
             
             do {
@@ -245,6 +270,8 @@ class MainController: UIViewController, UITextFieldDelegate {
             
             if let response_code = server_response["response_code"] as? Int  {
                 if(response_code == 200) {
+                    let preferences = UserDefaults.standard
+                    preferences.set(true, forKey: "touchIdEnrolled")
                     DispatchQueue.main.async(execute: self.loginDone)
                 } else {
                     DispatchQueue.main.async(execute: self.loginToDo)
@@ -256,7 +283,40 @@ class MainController: UIViewController, UITextFieldDelegate {
         
     }
     
-
+    func touchAuthenticateUser() {
+        
+        let touchIDManager = TouchIDManager()
+        
+        touchIDManager.authenticateUser(success: { () -> () in
+            OperationQueue.main.addOperation({ () -> Void in
+                self.loginDone()
+            })
+        }, failure: { (evaluationError: NSError) -> () in
+            switch evaluationError.code {
+            case LAError.Code.systemCancel.rawValue:
+                print("Authentication cancelled by the system")
+                self.loginToDo()
+            case LAError.Code.userCancel.rawValue:
+                print("Authentication cancelled by the user")
+                self.loginToDo()
+            case LAError.Code.userFallback.rawValue:
+                print("User wants to use a password")
+                
+                self.loginToDo()
+            case LAError.Code.touchIDNotEnrolled.rawValue:
+                print("TouchID not enrolled")
+                
+            case LAError.Code.passcodeNotSet.rawValue:
+                print("Passcode not set")
+                
+            default:
+                print("Authentication failed")
+                self.loginToDo()
+            }
+        })
+    }
+    
+    
 }
 
 
