@@ -41,13 +41,13 @@ class MainController: UIViewController, UITextFieldDelegate {
         // Check for empty fields
         if (userEmail.isEmpty) {
             animateMe(textField: self.loginTextField)
-            login_button.isEnabled = true
+            //login_button.isEnabled = true
             return
         }
         
         if (userPassword.isEmpty) {
             animateMe(textField: self.passwordTextField)
-            login_button.isEnabled = true
+            //login_button.isEnabled = true
             return
         }
 
@@ -59,7 +59,7 @@ class MainController: UIViewController, UITextFieldDelegate {
         activityIndicator.startAnimating()
         
         // disable login button to prevent performing segue twice
-        login_button.isEnabled = false
+        //login_button.isEnabled = false
 
         login_now(username:loginTextField.text!, password: passwordTextField.text!)
         
@@ -113,7 +113,7 @@ class MainController: UIViewController, UITextFieldDelegate {
     
     // function without arguments that are run from async
     func displayMyAlertMessage() {
-        let myAlert =  UIAlertController(title:"Alert", message: "Invalid username or password", preferredStyle: UIAlertControllerStyle.alert)
+        let myAlert =  UIAlertController(title:"Invalid username or password", message: "Please try again", preferredStyle: UIAlertControllerStyle.alert)
         
         let okAction = UIAlertAction(title:"Ok", style: UIAlertActionStyle.default, handler: nil)
         myAlert.addAction(okAction)
@@ -202,7 +202,7 @@ class MainController: UIViewController, UITextFieldDelegate {
         self.performSegue(withIdentifier: "ShifterPokedexVC", sender: self)
         
         // Enable login button before segue
-        login_button.isEnabled = true
+        //login_button.isEnabled = true
   
     }
     
@@ -230,7 +230,7 @@ class MainController: UIViewController, UITextFieldDelegate {
             }
         }
         loginStackView.isHidden = false
-        login_button.isEnabled = true
+        //login_button.isEnabled = true
 
     }
     
