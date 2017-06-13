@@ -8,6 +8,7 @@
 
 import UIKit
 import LocalAuthentication
+import AudioToolbox
 
 class MainController: UIViewController, UITextFieldDelegate {
 
@@ -26,6 +27,11 @@ class MainController: UIViewController, UITextFieldDelegate {
     var login_session:String = ""
     
     @IBAction func loginButtonTapped(_ sender: Any) {
+        
+        // hide login and thumb id buttons
+        loginStackView.isHidden = true
+        thumbIdImage.isHidden = true
+        thumbIdButton.isHidden = true
         
         // disable login button to prevent launching segue twice
         login_button.isEnabled = false
@@ -72,6 +78,8 @@ class MainController: UIViewController, UITextFieldDelegate {
     override func viewDidLoad() {
         
         super.viewDidLoad()
+        
+        // hide the login stack view initially
         loginStackView.isHidden = true
 
 
@@ -82,7 +90,7 @@ class MainController: UIViewController, UITextFieldDelegate {
         // redirect if logged in or not
         let preferences = UserDefaults.standard
         if preferences.object(forKey: "session") != nil {
-            login_session   = preferences.object(forKey: "session") as! String
+            login_session  = preferences.object(forKey: "session") as! String
             check_session()
         
         } else {
@@ -106,6 +114,7 @@ class MainController: UIViewController, UITextFieldDelegate {
         myAlert.addAction(okAction)
         
         self.present(myAlert, animated: true, completion: nil)
+        vibrate(howMany: 1)
     }
     
     // Dismiss the keyboard when not editing
@@ -173,7 +182,7 @@ class MainController: UIViewController, UITextFieldDelegate {
                 
                 // Display alert message and enable login button
                 DispatchQueue.main.async(execute: self.displayMyAlertMessage)
-                self.login_button.isEnabled = true
+                DispatchQueue.main.async(execute: self.loginToDo)
             }
             
         })
@@ -214,8 +223,7 @@ class MainController: UIViewController, UITextFieldDelegate {
             }
         }
         loginStackView.isHidden = false
-
-        
+ 
 
     }
     
@@ -295,14 +303,13 @@ class MainController: UIViewController, UITextFieldDelegate {
             switch evaluationError.code {
             case LAError.Code.systemCancel.rawValue:
                 print("Authentication cancelled by the system")
-                self.loginToDo()
+                //self.loginToDo()
             case LAError.Code.userCancel.rawValue:
                 print("Authentication cancelled by the user")
-                self.loginToDo()
+                //self.loginToDo()
             case LAError.Code.userFallback.rawValue:
                 print("User wants to use a password")
-                
-                self.loginToDo()
+                //self.loginToDo()
             case LAError.Code.touchIDNotEnrolled.rawValue:
                 print("TouchID not enrolled")
                 
@@ -311,11 +318,19 @@ class MainController: UIViewController, UITextFieldDelegate {
                 
             default:
                 print("Authentication failed")
-                self.loginToDo()
+                //self.loginToDo()
             }
+            self.loginToDo()
         })
     }
-    
+
+    func vibrate(howMany: Int) {
+        let x = Int(howMany)
+        for _ in 1...x {
+            AudioServicesPlaySystemSound(kSystemSoundID_Vibrate)
+            //sleep(1)
+        }
+    }
     
 }
 
