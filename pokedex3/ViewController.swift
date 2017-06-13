@@ -11,9 +11,27 @@ import AVFoundation
 class ViewController: UIViewController, UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout, UISearchBarDelegate {
     
     @IBAction func logoutButtonTapped(_ sender: Any) {
-        let preferences = UserDefaults.standard
-        preferences.removeObject(forKey: "session")
-        dismiss(animated: true, completion: nil)
+        
+        let optionMenu = UIAlertController(title: nil, message: "Are you sure?", preferredStyle: .actionSheet)
+        let logoutAction = UIAlertAction(title: "Logout", style: .default, handler: {
+            (alert: UIAlertAction!) -> Void in
+            
+            let preferences = UserDefaults.standard
+            preferences.removeObject(forKey: "session")
+            self.dismiss(animated: true, completion: nil)
+
+            
+        })
+        //
+        let cancelAction = UIAlertAction(title: "Cancel", style: .cancel, handler: {
+            (alert: UIAlertAction!) -> Void in
+            print("Cancelled")
+        })
+        
+        optionMenu.addAction(logoutAction)
+        optionMenu.addAction(cancelAction)
+        
+        self.present(optionMenu, animated: true, completion: nil)
     }
     
     @IBOutlet weak var collection: UICollectionView!

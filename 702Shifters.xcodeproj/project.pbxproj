@@ -7,9 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		076C6E25300051376ECE0ED0 /* Pods_pokedex3.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 20C889C2740714F5F3685E14 /* Pods_pokedex3.framework */; };
 		7E1AF1AC1EEA1009005C7D41 /* CustomTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E1AF1AB1EEA1009005C7D41 /* CustomTextField.swift */; };
 		7E2339D41EE71B6C0016AF23 /* MainController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E2339D31EE71B6C0016AF23 /* MainController.swift */; };
+		7EC5D4D61EEF8D0E009B4977 /* LocalAuthentication.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7EC5D4D51EEF8D0E009B4977 /* LocalAuthentication.framework */; };
 		7EDDC6C91EDFD6320046333A /* json_service.php in Resources */ = {isa = PBXBuildFile; fileRef = 7EDDC6C81EDFD6320046333A /* json_service.php */; };
 		F9439F141D4331BE00B4B214 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9439F131D4331BE00B4B214 /* AppDelegate.swift */; };
 		F9439F161D4331BE00B4B214 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9439F151D4331BE00B4B214 /* ViewController.swift */; };
@@ -23,9 +23,9 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		20C889C2740714F5F3685E14 /* Pods_pokedex3.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_pokedex3.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		7E1AF1AB1EEA1009005C7D41 /* CustomTextField.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = CustomTextField.swift; path = ../../DreamLister/DreamLister/CustomTextField.swift; sourceTree = "<group>"; };
 		7E2339D31EE71B6C0016AF23 /* MainController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainController.swift; sourceTree = "<group>"; };
+		7EC5D4D51EEF8D0E009B4977 /* LocalAuthentication.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = LocalAuthentication.framework; path = System/Library/Frameworks/LocalAuthentication.framework; sourceTree = SDKROOT; };
 		7EDDC6C81EDFD6320046333A /* json_service.php */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.script.php; name = json_service.php; path = ../../../../Downloads/json_service.php; sourceTree = "<group>"; };
 		850121C370D34FAEA05601A9 /* Pods-pokedex3.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-pokedex3.debug.xcconfig"; path = "Pods/Target Support Files/Pods-pokedex3/Pods-pokedex3.debug.xcconfig"; sourceTree = "<group>"; };
 		DAECE24C54B75D9A033B22B0 /* Pods-pokedex3.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-pokedex3.release.xcconfig"; path = "Pods/Target Support Files/Pods-pokedex3/Pods-pokedex3.release.xcconfig"; sourceTree = "<group>"; };
@@ -47,7 +47,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				076C6E25300051376ECE0ED0 /* Pods_pokedex3.framework in Frameworks */,
+				7EC5D4D61EEF8D0E009B4977 /* LocalAuthentication.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -66,7 +66,7 @@
 		EDC85CD497AC636471B7882D /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				20C889C2740714F5F3685E14 /* Pods_pokedex3.framework */,
+				7EC5D4D51EEF8D0E009B4977 /* LocalAuthentication.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
