@@ -55,6 +55,7 @@ class MainController: UIViewController, UITextFieldDelegate {
         loginStackView.isHidden = true
         thumbIdImage.isHidden = true
         thumbIdButton.isHidden = true
+        
         // show activity activityIndicator
         activityIndicator.startAnimating()
         
@@ -231,6 +232,13 @@ class MainController: UIViewController, UITextFieldDelegate {
         }
         loginStackView.isHidden = false
         //login_button.isEnabled = true
+        
+        loginTextField.leftViewMode = UITextFieldViewMode.always
+        loginTextField.leftView = UIImageView(image: UIImage(named: "username"))
+        
+        
+        passwordTextField.leftViewMode = UITextFieldViewMode.always
+        passwordTextField.leftView = UIImageView(image: UIImage(named: "password"))
 
     }
     
@@ -333,9 +341,21 @@ class MainController: UIViewController, UITextFieldDelegate {
         }
     }
     
+    
+    @IBAction func createAccountButtonTapped(_ sender: Any) {
+        // hide login stack view and thumb id buttons
+        loginStackView.isHidden = !loginStackView.isHidden
+        thumbIdImage.isHidden = !thumbIdImage.isHidden
+        thumbIdButton.isHidden = thumbIdButton.isHidden
+    }
+    
+    @IBAction func forgotPasswordButtonTapped(_ sender: Any) {
+                        
+        // hide login stack view and thumb id buttons
+        loginStackView.isHidden = !loginStackView.isHidden
+        thumbIdImage.isHidden = !thumbIdImage.isHidden
+        thumbIdButton.isHidden = thumbIdButton.isHidden
+    }
+
+
 }
-
-
-
-
-

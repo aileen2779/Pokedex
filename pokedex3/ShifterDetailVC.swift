@@ -2,11 +2,9 @@
 //  PokemonDetailVC.swift
 //  pokedex3
 //
-//  Created by Jonny B on 7/23/16.
-//  Copyright © 2016 Jonny B. All rights reserved.
-//
 
 import UIKit
+import WebKit
 
 class PokemonDetailVC: UIViewController {
     
@@ -40,8 +38,10 @@ class PokemonDetailVC: UIViewController {
     @IBAction func memberNonMember(_ sender: UISegmentedControl) {
         if sender.selectedSegmentIndex == 0 {
             self.updateUI()
-        } else {
+        } else if sender.selectedSegmentIndex == 1{
             self.updateUIWithMember()
+        } else {
+            waiverForm()
         }
     }
     
@@ -58,7 +58,87 @@ class PokemonDetailVC: UIViewController {
         
     }
     
+    
+    @IBOutlet weak var webView: UIWebView!
+    
+    func waiverForm() {
+        webView.isHidden = false
+        mainImg.isHidden = true
+        
+        userIdText.isHidden     = true
+        phoneText.isHidden      = true
+        address1Text.isHidden   = true
+        cityText.isHidden       = true
+        stateText.isHidden      = true
+        zipText.isHidden        = true
+        countryText.isHidden    = true
+        emerNameText.isHidden   = true
+        emerNumText.isHidden    = true
+        emailText.isHidden      = true
+        
+        userIdLabel.isHidden    = true
+        phoneLabel.isHidden     = true
+        addressLabel.isHidden   = true
+        cityLabel.isHidden      = true
+        stateLabel.isHidden     = true
+        zipLabel.isHidden       = true
+        countryLabel.isHidden   = true
+        emerNameLabel.isHidden  = true
+        emerNumLabel.isHidden   = true
+        emailLabel.isHidden     = true
+    
+        // local pdf
+        //if let pdfURL = Bundle.main.url(forResource: "Alice_In_Wonderland", withExtension: "pdf", subdirectory: nil, localization: nil)  {
+        //    do {
+        //        let data = try Data(contentsOf: pdfURL)
+        //        let webView = WKWebView(frame: CGRect(x:20,y:120,width:view.frame.size.width-40, height:view.frame.size.height-40))
+        //        webView.load(data, mimeType: "application/pdf", characterEncodingName:"", baseURL: pdfURL.deletingLastPathComponent())
+        //        view.addSubview(webView)
+        //    }
+        //    catch {
+        //        // catch errors here
+        //    }
+        
+        //}
+        let urlWaiver  = URL_WAIVER
+        let waiverFile = "\(shifter.userId).pdf"
+        
+        let url:URL =  URL(string:"\(urlWaiver)/\(waiverFile)" )!
+        
+        //let url:URL =  URL(string:"https://drive.google.com/open?id=0B-0ijKsqhqOjLWp0czlBc1VzWVhLdjdfcHVLRlJYOWNyMGpF")!
+        
+        print(url)
+        
+        webView.loadRequest(URLRequest(url: url))
+        
+    }
+    
     func updateUIWithMember() {
+        webView.isHidden = true
+        mainImg.isHidden = false
+        
+        userIdLabel.isHidden    = false
+        phoneLabel.isHidden     = false
+        addressLabel.isHidden   = false
+        cityLabel.isHidden      = false
+        stateLabel.isHidden     = false
+        zipLabel.isHidden       = false
+        countryLabel.isHidden   = false
+        emerNameLabel.isHidden  = false
+        emerNumLabel.isHidden   = false
+        emailLabel.isHidden     = false
+        
+        userIdText.isHidden     = false
+        phoneText.isHidden      = false
+        address1Text.isHidden   = false
+        cityText.isHidden       = false
+        stateText.isHidden      = false
+        zipText.isHidden        = false
+        countryText.isHidden    = false
+        emerNameText.isHidden   = false
+        emerNumText.isHidden    = false
+        emailText.isHidden      = false
+        
         userIdText.text     = ""
         phoneText.text      = ""
         address1Text.text   = ""
@@ -105,6 +185,16 @@ class PokemonDetailVC: UIViewController {
         currencyFormatter.locale = NSLocale.current
         let priceString = currencyFormatter.string(from: price! as NSNumber)
                
+        mainImg.isHidden = false
+        webView.isHidden = true
+            
+        userIdText.isHidden     = false
+        phoneText.isHidden      = false
+        address1Text.isHidden   = false
+        cityText.isHidden       = false
+        stateText.isHidden      = false
+        zipText.isHidden        = false
+
         userIdText.text     = shifter.membership
         phoneText.text      = priceString
         address1Text.text   = shifter.payment_gateway
@@ -112,11 +202,21 @@ class PokemonDetailVC: UIViewController {
         stateText.text      = shifter.membership_start
         zipText.text        = shifter.membership_end
 
-
         countryText.isHidden = true
         emerNameText.isHidden = true
         emerNumText.isHidden = true
         emailText.isHidden  = true
+        
+        userIdLabel.isHidden   = false
+        phoneLabel.isHidden   = false
+        addressLabel.isHidden   = false
+        cityLabel.isHidden   = false
+        stateLabel.isHidden   = false
+        zipLabel.isHidden   = false
+        countryLabel.isHidden   = false
+        emerNameLabel.isHidden   = false
+        emerNumLabel.isHidden   = false
+        emailLabel.isHidden   = false
         
         userIdLabel.text    = "Membership    "
         phoneLabel.text     = "Payment          "

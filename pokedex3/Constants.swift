@@ -1,9 +1,6 @@
 //
 //  Constants.swift
-//  pokedex3  //
-//  Created by Jonny B on 7/24/16.
-//  Copyright © 2016 Jonny B. All rights reserved.
-//
+
 
 import Foundation
 
@@ -20,5 +17,6 @@ let URL_BASE = URL(string: URLToken)
 //let URL_POKEMON = "/api/v1/pokemon/"
 
 let URL_AUTH  = "http://www.702shifters.com/ios_auth.php"
+let URL_WAIVER  = "http://www.702shifters.com/waiver"
 
 typealias DownloadComplete = () -> ()

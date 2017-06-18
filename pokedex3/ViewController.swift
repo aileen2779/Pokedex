@@ -136,8 +136,7 @@ class ViewController: UIViewController, UICollectionViewDelegate, UICollectionVi
                                                 membership_start: membership_start,
                                                 membership_end: membership_end,
                                                 membership_status: membership_status,
-                                                payment_gateway: payment_gateway
-                            )
+                                                payment_gateway: payment_gateway                            )
                             self.shifter.append(shifter)
                             x += 1
                         } while ( x < myJson.count)
@@ -247,6 +246,7 @@ class ViewController: UIViewController, UICollectionViewDelegate, UICollectionVi
         }
         
     }
+    
     
     
 }
