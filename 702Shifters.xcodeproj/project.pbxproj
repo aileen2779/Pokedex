@@ -14,7 +14,6 @@
 		7EC5D4D61EEF8D0E009B4977 /* LocalAuthentication.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7EC5D4D51EEF8D0E009B4977 /* LocalAuthentication.framework */; };
 		7EC5D4DE1EEF9376009B4977 /* TouchIDManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 7EC5D4DC1EEF9376009B4977 /* TouchIDManager.m */; };
 		7EC5D4DF1EEF9376009B4977 /* TouchIDManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7EC5D4DD1EEF9376009B4977 /* TouchIDManager.swift */; };
-		D2A2AFC57756DF55BD6F7DEF /* Pods_702Shifters.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B163013A3E8CAE1B76CAFEC6 /* Pods_702Shifters.framework */; };
 		F9439F141D4331BE00B4B214 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9439F131D4331BE00B4B214 /* AppDelegate.swift */; };
 		F9439F161D4331BE00B4B214 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9439F151D4331BE00B4B214 /* ViewController.swift */; };
 		F9439F191D4331BE00B4B214 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F9439F171D4331BE00B4B214 /* Main.storyboard */; };
@@ -59,7 +58,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				7EC5D4D61EEF8D0E009B4977 /* LocalAuthentication.framework in Frameworks */,
-				D2A2AFC57756DF55BD6F7DEF /* Pods_702Shifters.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -131,6 +129,7 @@
 		F9D0405B1D43D5A300E52165 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				7E1AF1AB1EEA1009005C7D41 /* CustomTextField.swift */,
 				F9D0405C1D43D5BF00E52165 /* ShifterCell.swift */,
 			);
 			name = View;
@@ -155,7 +154,6 @@
 				7EC5D4DB1EEF9376009B4977 /* TouchIDManager.h */,
 				7EC5D4DC1EEF9376009B4977 /* TouchIDManager.m */,
 				7EC5D4DD1EEF9376009B4977 /* TouchIDManager.swift */,
-				7E1AF1AB1EEA1009005C7D41 /* CustomTextField.swift */,
 				7EC5D4D91EEF9375009B4977 /* 702Shifters-Bridging-Header.h */,
 				7E62B0CA1EF78297004E3205 /* json_service.php */,
 			);

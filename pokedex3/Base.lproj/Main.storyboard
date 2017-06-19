@@ -66,12 +66,12 @@
                                             <constraint firstAttribute="width" constant="300" id="gyb-zt-dk7"/>
                                         </constraints>
                                         <nil key="textColor"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="21"/>
                                         <textInputTraits key="textInputTraits"/>
                                         <userDefinedRuntimeAttributes>
                                             <userDefinedRuntimeAttribute type="image" keyPath="leftImage" value="username"/>
                                             <userDefinedRuntimeAttribute type="number" keyPath="leftPadding">
-                                                <integer key="value" value="15"/>
+                                                <real key="value" value="15"/>
                                             </userDefinedRuntimeAttribute>
                                         </userDefinedRuntimeAttributes>
                                     </textField>
@@ -82,12 +82,12 @@
                                             <constraint firstAttribute="height" constant="60" id="osZ-aZ-jxO"/>
                                         </constraints>
                                         <nil key="textColor"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="21"/>
                                         <textInputTraits key="textInputTraits" secureTextEntry="YES"/>
                                         <userDefinedRuntimeAttributes>
                                             <userDefinedRuntimeAttribute type="image" keyPath="leftImage" value="password"/>
                                             <userDefinedRuntimeAttribute type="number" keyPath="leftPadding">
-                                                <integer key="value" value="15"/>
+                                                <real key="value" value="15"/>
                                             </userDefinedRuntimeAttribute>
                                         </userDefinedRuntimeAttributes>
                                     </textField>
@@ -98,7 +98,7 @@
                                             <constraint firstAttribute="height" constant="60" id="axZ-Ep-ruV"/>
                                             <constraint firstAttribute="width" constant="300" id="w3F-iP-vmI"/>
                                         </constraints>
-                                        <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="14"/>
+                                        <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="21"/>
                                         <state key="normal" title="Login">
                                             <color key="titleColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
                                         </state>
