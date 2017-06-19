@@ -9,6 +9,7 @@ import WebKit
 class PokemonDetailVC: UIViewController {
     
     var shifter: ShifterClass!
+    let label = UILabel(frame: CGRect(x: 0, y: 0, width: 300, height: 21))
 
     @IBOutlet weak var nameLbl: UILabel!
     @IBOutlet weak var mainImg: UIImageView!
@@ -109,16 +110,17 @@ class PokemonDetailVC: UIViewController {
             let url:URL =  URL(string: "\(urlWaiver)/\(waiverFile)")!
             webView.loadRequest(URLRequest(url: url))
         } else {
-    
-            let label = UILabel(frame: CGRect(x: 0, y: 0, width: 300, height: 21))
+            label.isHidden = false
+            label.text = ("No waiver found for \(shifter.name)")
             label.center = CGPoint(x: 160, y: 285)
             label.textAlignment = .center
-            label.text = ("No waiver found for \(shifter.name)")
             self.view.addSubview(label)
         }
     }
     
     func updateUIWithMember() {
+        
+        label.isHidden = true
         webView.isHidden = true
         mainImg.isHidden = false
         
@@ -180,6 +182,8 @@ class PokemonDetailVC: UIViewController {
     }
 
     func updateUI() {
+        // hide label
+        label.isHidden = true
 
         let price = Double(shifter.membership_paid)
         
