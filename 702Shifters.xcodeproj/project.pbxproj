@@ -14,6 +14,7 @@
 		7EC5D4D61EEF8D0E009B4977 /* LocalAuthentication.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7EC5D4D51EEF8D0E009B4977 /* LocalAuthentication.framework */; };
 		7EC5D4DE1EEF9376009B4977 /* TouchIDManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 7EC5D4DC1EEF9376009B4977 /* TouchIDManager.m */; };
 		7EC5D4DF1EEF9376009B4977 /* TouchIDManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7EC5D4DD1EEF9376009B4977 /* TouchIDManager.swift */; };
+		D2A2AFC57756DF55BD6F7DEF /* Pods_702Shifters.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B163013A3E8CAE1B76CAFEC6 /* Pods_702Shifters.framework */; };
 		F9439F141D4331BE00B4B214 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9439F131D4331BE00B4B214 /* AppDelegate.swift */; };
 		F9439F161D4331BE00B4B214 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9439F151D4331BE00B4B214 /* ViewController.swift */; };
 		F9439F191D4331BE00B4B214 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F9439F171D4331BE00B4B214 /* Main.storyboard */; };
@@ -26,6 +27,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		095B68621A2F6F09F5BF7EAB /* Pods-702Shifters.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-702Shifters.release.xcconfig"; path = "Pods/Target Support Files/Pods-702Shifters/Pods-702Shifters.release.xcconfig"; sourceTree = "<group>"; };
+		22B17FE41A45444A6BF1B498 /* Pods-702Shifters.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-702Shifters.debug.xcconfig"; path = "Pods/Target Support Files/Pods-702Shifters/Pods-702Shifters.debug.xcconfig"; sourceTree = "<group>"; };
 		7E1AF1AB1EEA1009005C7D41 /* CustomTextField.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = CustomTextField.swift; path = ../../DreamLister/DreamLister/CustomTextField.swift; sourceTree = "<group>"; };
 		7E2339D31EE71B6C0016AF23 /* MainController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainController.swift; sourceTree = "<group>"; };
 		7E62B0CA1EF78297004E3205 /* json_service.php */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.script.php; path = json_service.php; sourceTree = "<group>"; };
@@ -36,8 +39,7 @@
 		7EC5D4DB1EEF9376009B4977 /* TouchIDManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = TouchIDManager.h; path = TouchIDResources/TouchIDManager.h; sourceTree = "<group>"; };
 		7EC5D4DC1EEF9376009B4977 /* TouchIDManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = TouchIDManager.m; path = TouchIDResources/TouchIDManager.m; sourceTree = "<group>"; };
 		7EC5D4DD1EEF9376009B4977 /* TouchIDManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = TouchIDManager.swift; path = TouchIDResources/TouchIDManager.swift; sourceTree = "<group>"; };
-		850121C370D34FAEA05601A9 /* Pods-pokedex3.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-pokedex3.debug.xcconfig"; path = "Pods/Target Support Files/Pods-pokedex3/Pods-pokedex3.debug.xcconfig"; sourceTree = "<group>"; };
-		DAECE24C54B75D9A033B22B0 /* Pods-pokedex3.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-pokedex3.release.xcconfig"; path = "Pods/Target Support Files/Pods-pokedex3/Pods-pokedex3.release.xcconfig"; sourceTree = "<group>"; };
+		B163013A3E8CAE1B76CAFEC6 /* Pods_702Shifters.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_702Shifters.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		F9439F101D4331BE00B4B214 /* 702Shifters.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = 702Shifters.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F9439F131D4331BE00B4B214 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		F9439F151D4331BE00B4B214 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -57,17 +59,18 @@
 			buildActionMask = 2147483647;
 			files = (
 				7EC5D4D61EEF8D0E009B4977 /* LocalAuthentication.framework in Frameworks */,
+				D2A2AFC57756DF55BD6F7DEF /* Pods_702Shifters.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		34F08DC4FD3F5D093CF49C05 /* Pods */ = {
+		9B0AA4E92946A37E6BEF1CD5 /* Pods */ = {
 			isa = PBXGroup;
 			children = (
-				850121C370D34FAEA05601A9 /* Pods-pokedex3.debug.xcconfig */,
-				DAECE24C54B75D9A033B22B0 /* Pods-pokedex3.release.xcconfig */,
+				22B17FE41A45444A6BF1B498 /* Pods-702Shifters.debug.xcconfig */,
+				095B68621A2F6F09F5BF7EAB /* Pods-702Shifters.release.xcconfig */,
 			);
 			name = Pods;
 			sourceTree = "<group>";
@@ -76,6 +79,7 @@
 			isa = PBXGroup;
 			children = (
 				7EC5D4D51EEF8D0E009B4977 /* LocalAuthentication.framework */,
+				B163013A3E8CAE1B76CAFEC6 /* Pods_702Shifters.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -86,8 +90,8 @@
 				F9439F121D4331BE00B4B214 /* 702Shifters */,
 				F9439F1F1D4331BE00B4B214 /* Info.plist */,
 				F9439F111D4331BE00B4B214 /* Products */,
-				34F08DC4FD3F5D093CF49C05 /* Pods */,
 				EDC85CD497AC636471B7882D /* Frameworks */,
+				9B0AA4E92946A37E6BEF1CD5 /* Pods */,
 			);
 			sourceTree = "<group>";
 		};
@@ -269,7 +273,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-pokedex3/Pods-pokedex3-frameworks.sh\"\n";
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-702Shifters/Pods-702Shifters-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 		F468BCF02733FDFE07861F04 /* [CP] Copy Pods Resources */ = {
@@ -284,7 +288,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-pokedex3/Pods-pokedex3-resources.sh\"\n";
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-702Shifters/Pods-702Shifters-resources.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 /* End PBXShellScriptBuildPhase section */
@@ -422,7 +426,7 @@
 		};
 		F9439F231D4331BE00B4B214 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 850121C370D34FAEA05601A9 /* Pods-pokedex3.debug.xcconfig */;
+			baseConfigurationReference = 22B17FE41A45444A6BF1B498 /* Pods-702Shifters.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
@@ -441,7 +445,7 @@
 		};
 		F9439F241D4331BE00B4B214 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = DAECE24C54B75D9A033B22B0 /* Pods-pokedex3.release.xcconfig */;
+			baseConfigurationReference = 095B68621A2F6F09F5BF7EAB /* Pods-702Shifters.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
