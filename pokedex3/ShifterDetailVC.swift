@@ -100,17 +100,22 @@ class PokemonDetailVC: UIViewController {
         //    }
         
         //}
-        let urlWaiver  = URL_WAIVER
-        let waiverFile = "\(shifter.userId).pdf"
-        
-        let url:URL =  URL(string:"\(urlWaiver)/\(waiverFile)" )!
-        
-        //let url:URL =  URL(string:"https://drive.google.com/open?id=0B-0ijKsqhqOjLWp0czlBc1VzWVhLdjdfcHVLRlJYOWNyMGpF")!
-        
-        print(url)
-        
-        webView.loadRequest(URLRequest(url: url))
-        
+
+        // replace spaces with %20
+        let waiverFile = "\(shifter.waiver_form)".replacingOccurrences(of: " ", with: "%20")
+        if waiverFile != "" {
+            let urlWaiver  = URL_WAIVER
+
+            let url:URL =  URL(string: "\(urlWaiver)/\(waiverFile)")!
+            webView.loadRequest(URLRequest(url: url))
+        } else {
+    
+            let label = UILabel(frame: CGRect(x: 0, y: 0, width: 300, height: 21))
+            label.center = CGPoint(x: 160, y: 285)
+            label.textAlignment = .center
+            label.text = ("No waiver found for \(shifter.name)")
+            self.view.addSubview(label)
+        }
     }
     
     func updateUIWithMember() {

@@ -28,6 +28,7 @@ class ShifterClass {
     private var _membership_end: String!
     private var _membership_status: String!
     private var _payment_gateway: String!
+    private var _waiver_form: String!
 
     
     var userName: String {
@@ -35,6 +36,13 @@ class ShifterClass {
             _userName = ""
         }
         return _userName
+    }
+
+    var waiver_form: String {
+        if _waiver_form == nil {
+            _waiver_form = ""
+        }
+        return _waiver_form
     }
     
     var description: String {
@@ -179,7 +187,8 @@ class ShifterClass {
          membership_start: String,
          membership_end: String,
          membership_status: String,
-         payment_gateway: String
+         payment_gateway: String,
+         waiver_form: String
         ) {
         
         self._name = name
@@ -200,7 +209,7 @@ class ShifterClass {
         self._membership_end = membership_end
         self._membership_status = membership_status
         self._payment_gateway = payment_gateway
-        
+        self._waiver_form = waiver_form
     }
     
 }

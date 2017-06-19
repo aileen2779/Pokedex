@@ -117,6 +117,7 @@ class ViewController: UIViewController, UICollectionViewDelegate, UICollectionVi
                             let membership_end      = String(dict2["membership_end"]!)!
                             let membership_status   = String(dict2["membership_status"]!)!
                             let payment_gateway     = String(dict2["payment_gateway"]!)!
+                            let waiver_form         = String(dict2["waiver_form"]!)!
                             
                             let name = "\(dict2["first_name"]!.lowercased()) \(dict2["last_name"]!.lowercased())"
                             let shifter = ShifterClass(name: name,
@@ -136,7 +137,8 @@ class ViewController: UIViewController, UICollectionViewDelegate, UICollectionVi
                                                 membership_start: membership_start,
                                                 membership_end: membership_end,
                                                 membership_status: membership_status,
-                                                payment_gateway: payment_gateway                            )
+                                                payment_gateway: payment_gateway,
+                                                waiver_form: waiver_form)
                             self.shifter.append(shifter)
                             x += 1
                         } while ( x < myJson.count)
